@@ -1,0 +1,1027 @@
+/* Variables
+   ========================================================================== */
+/*
+* Define the web colors, based in the luma schema created by https://github.com/gerardbm/atomic
+* 
+* 1. Text default color, direction arrows and left menu text
+* 2. Top menu and left menu hover
+* 3. Theory background and code text color
+* 4. Left menu and inline code background color
+* 5. Headers, links, highlight text and quote in Responsive boxs
+* 6. Responsive box and direction arrows hover 
+* 7. Warning box
+* 8. left menu header plus code strings
+*/
+:root {
+	--orange-white: #C0AF9F; /*1*/
+	--orange-strong: #1E1813; /*2*/
+	--orange-medium: #251F18; /*3*/
+	--orange-soft: #957B62; /*4*/
+	--light-orange: #EDA55D; /*5*/
+	--dark-orange: #C97016; /*6*/
+
+	--dark-red: #EC5252; /*7*/
+	--light-white: #EFE6C9; /*8*/
+
+	--grey: rgb(150,150,150);
+
+	--cyan: #5E8F8F; /*5*/
+	--light-cyan: #99BDBD;/*7*/
+
+	--blue: rgb(0,173,230);
+	--blue-soft: rgb(200,225,255);
+	
+	--dark-blue: #3890E9; 
+	--light-blue: #7DBEFF;
+
+}
+
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+/**
+ * Base style of the web & general variables
+ *
+ * 1. Remove additional spaces between elements
+ * 2. Display in a whole screen
+ * 3. Set base font and font size
+ * 4. Add white as default color text
+ * 5. Remove black border in selected buttons
+ */
+
+html { /* 1 */
+	margin:0;
+	padding:0;
+}
+
+body {
+	/* Display & Box Model */
+	margin: 0; /* 1 */
+	padding: 0; /* 1 */
+	width: 100vw; /* 2 */
+	height: 100vh; /* 2 */
+	
+	/* Other */
+	font-family: sans-serif; /* 3 */
+	font-size: ; /* 3 */
+	background-color: var(--orange-medium);
+	color: var(--orange-white); /* 4 */
+}
+
+*:focus {
+	outline: 0 !important; /* 5 */
+}
+
+li {
+	margin-bottom: 2vh;
+}
+
+/* ==========================================================================
+   Flex Layout
+   ========================================================================== */
+/**
+ * Create classes to display flex layouts
+ *
+ * 1. Display flex content
+ * 2. Set direction to columns
+ * 3. Justify-content in space-between
+ * 4. Align-items at the center
+ */
+
+/* 1 */
+.flex {
+	display: flex;
+}
+
+/* 2 */
+.flex-columns {
+	display: flex;
+	flex-direction: column;
+}
+
+/* 3 */
+.jc-sb {
+	justify-content: space-between;
+}
+
+/* 4 */
+.ai-c {
+	align-items: center;
+}
+
+.jc-sa {
+	justify-content: space-around;
+}
+
+/* ==========================================================================
+   Top Menu
+   ========================================================================== */
+
+/**
+ * Navbar class
+ *
+ * Create fixed top-horizontal bar with navigation elements.
+ * It should be modified when the table of contest disappear
+ *
+ * 1. Fixed at the top of the page
+ * 2. Adjust nav at the TOC's width
+ * 3. Resize all its content
+ * 4. Change the color of the link that goes to index.html
+ */
+
+.navbar {
+	/* Positioning */
+	position: fixed; /* 1 */
+	top: 0; /* 1 */
+	right: 0; /* 1 */
+	z-index: 2;
+	
+	/* Display & Box Model */
+	margin: 0;
+	padding: 10px;
+	width: 85vw; /* 2 */
+	height: 8vh;
+	box-sizing: border-box; /* 3 */
+	
+	/* Other */
+	background-color: var(--orange-strong);
+}
+
+#navbar-menu a { /* 4 */
+	color: inherit;
+}
+
+/**
+ * Button class
+ *
+ * Modify the button that open/close TOC
+ *
+ * 1. Remove button predefine customization
+ * 
+ */
+
+.button-toc {
+	/* Display & Box Model */
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 10px;
+	
+	/* Other */
+	-webkit-appearance: none; /* 1 */
+	appearance: none; /* 1 */
+	text-decoration: none;
+	background: none;
+	border: solid 1px transparent;
+	border-radius: 0;
+	font-size: 22px;
+	text-align: center;
+}
+
+/**
+ * Button logo with CSS and span tag
+ *
+ * Inside .button-toc element there is 3 span,
+ * each one is a white line
+ *
+ * 1. Display like block element
+ * 2. Adjust width and height
+ * 3. Set margin-bottom except in the last one
+ */
+
+.button-toc > span {
+	/* Display & Box Model */
+	display: block; /* 1 */
+	width: 26px;
+	height: 4px;
+	
+	/* Other */
+	background-color: var(--orange-white);
+}
+
+.button-toc > span:not(:last-child) { /* 3 */
+	margin-bottom: 4px;
+}
+
+/**
+ * Set properties for the git-logo and main title,
+ * both inside the navbar menu
+ */
+#github-logo,
+#github-logo:hover {
+	background-color: transparent;
+}
+
+#github-logo img {
+	width: 30px;
+	height: auto;
+	max-width: 30px;
+}
+
+#main-title a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/**
+ * Navbar behaviour in small screens
+ *
+ * When screen max-width will be less than 1100,
+ * the button disappear and it will open a new link
+ * with .toc-icon class
+ *
+ * 1. Hide TOC button
+ * 2. Display the new link (prior set to hide)
+ * 3. Resize its width to the whole size width (TOC menu will be hidden)
+ * 4. Resize its height
+ * 5. Lower font-size
+ */
+
+.toc-icon {
+	display: none; /* 2 */
+	
+	text-decoration: none;
+}
+
+.toc-icon:hover {
+	text-decoration: underline;
+}
+
+
+@media screen and (max-width: 1100px) {
+	#openTOCbutton {display: none;} /* 1 */
+	
+	.toc-icon {
+		display: inline; /* 2 */
+		
+		font-size: 15px;
+	}
+	.navbar {
+		width: 100%; /* 3 */
+		height: 10%;/*4*/
+	}
+	
+	#main-title {
+		font-size: 15px; /* 5 */
+	}
+}
+
+/* When the screen is less than 300 pixels wide, small font-size */
+@media screen and (max-width: 300px) {
+	.toc-icon {
+		font-size: 11px;
+	}
+	
+	#main-title {
+		font-size: 11px;
+	}
+}
+
+/* ==========================================================================
+   Table of Contents (TOC) left menu
+   ========================================================================== */
+/**
+ * Display vertical TOC menu and horizontal menu in small screens
+ *
+ * Create a fixed div with class .TOC, with 100% of viewport height &
+ * the style of tittle and subtitles
+ */
+
+/* Horizontal TOC menu
+   ========================================================================== */
+.TOC {
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	overflow: auto;
+	width: 15vw;
+	height: 100%;
+	
+	box-sizing: border-box;
+	background-color: var(--orange-soft);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+p.title {
+	padding-left: 15px;
+	
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--light-white);
+}
+
+a.subtitle {
+	display: block;
+	margin:0;
+	padding: 10px 10px 10px 20px;
+	width: 100%;
+	cursor: pointer;
+	box-sizing: border-box;
+
+	font-weight: 700;
+	font-size: 15px;
+	text-decoration: none;
+	border-bottom: 1px solid var(--orange-white);
+	color: var(--orange-white);
+}
+
+a.subtitle:hover,
+a.subtitle.active {
+	color: var(--orange-strong);
+	background-color: var(--orange-white);
+}
+
+/* When the screen is less than 1100 pixels wide, show the TOC bottom (.icon) and close left TOC */
+@media screen and (max-width: 1100px) {
+	.TOC {display: none;}
+}
+
+/* Vertical TOC menu (responsive)
+   ========================================================================== */
+/** 
+ * The "responsive" class is added to the navbar with JavaScript when the user clicks on the ".toc-icon"
+ * This class makes the left TOC looks good on small screens (display the links vertically in the whole page)
+ */
+ 
+@media screen and (max-width: 1100px) {
+	.TOC.responsive {
+		position: fixed;
+		top: 10vh;
+		height: 90vh;
+		left: 0;
+		z-index:1;
+		margin: 0;
+		display: block;
+		width: 100%;
+		padding: 5vh 0 5vh 0;
+	}
+	
+	.TOC.responsive p.title {
+		padding-left: 15px;
+		margin-bottom: 10px;
+		font-size: 18px;
+		color: var(--light-white);
+	}
+	
+	.TOC.responsive a.subtitle {
+		font-size: 16px;
+		text-align: left;
+		color: var(--orange-white);
+	}
+
+	.TOC.responsive a.subtitle.active,
+	.TOC.responsive a.subtitle:hover {
+		color: var(--orange-strong);
+		background-color: var(--orange-white);
+	}
+}
+
+/* ==========================================================================
+   Canvas and theory layout
+   ========================================================================== */
+
+/**
+ * Div element with vertical scroll that contains the theory
+ *
+ * This creates a single column of full-height, which surround the div theory and
+ * its the diferents sections
+ *
+ * Example HTML:
+ *
+ * <div id="canvas">
+ * 	<div id="theory">
+ * 		<div id="introduction"></div>
+ * 	</div>
+ * </div>
+ */
+
+/**
+ * Canvas layout
+ *
+ * Contais the "#theory" div and arrows for navigate through the page content
+ *
+ * 1. Adjust to navigation menu
+ * 2. Adjust with TOC menu
+ * 3. Prevent horizontal scroll
+ */
+
+#canvas {
+	position: absolute;
+	top: 8vh; /* 1 */
+	/* Switch in js script too */
+	left: 15vw; /* 2 */
+	
+	/* Switch in js script too */
+	width:85vw; /* 2 */
+	height: 92vh; /* 1 */
+	overflow: auto; /* 3*/
+}
+
+/**
+ * Theory layout
+ *
+ * Must only contain sections children.
+ *
+ * 1. Alineate in the center of the page
+ */
+
+#theory {
+	margin: auto; /* 1 */
+	padding-top: 10px;
+	width: 70vw;
+	
+	text-align: justify;
+	letter-spacing: 1px;
+	font-size: 16px;
+
+}
+
+/* In small screens, where TOC will dissapear, readjust canvas and theory divs position */
+/*
+ * Remember, when move canvas bottom with "top" property, the "height" of the element must
+ * decrease in order to avoid exceed the height of the screen (100%)
+*/
+@media screen and (max-width: 1100px) {
+	#canvas {
+		left: 0;
+		top: 10vh;
+		height: 90vh;
+		width: 100vw;
+	}
+	
+	#theory {
+		width: 90vw;
+		padding: 10px;
+		margin: auto;
+		letter-spacing: 0;
+		text-align: justify;
+		line-height: 1.2;
+	}
+}
+
+/* Theory elements styles
+   ========================================================================== */
+
+#theory h1 {
+	letter-spacing: 0.2vw;
+	font-weight: 900;
+	text-align: center;
+}
+
+#theory h2 {
+	margin-top: 8vh;
+	color: var(--light-orange);
+}
+
+#theory p {
+	line-height: 1.5;
+}
+
+/* Create vertical space between list elements */
+#theory ol,
+#theory ul {
+	line-height: 1.5;
+}
+
+#theory li > ul {
+	margin-top: 10px;
+	text-align: left;
+}
+
+#theory ol > li {
+	margin-top: 10px;
+}
+
+.highlight1 {
+	font-weight: 700;
+	color: var(--light-orange);
+}
+
+#theory a {
+	color: var(--light-orange);
+	text-decoration: none;
+}
+
+#theory a:hover {
+	text-decoration: underline;
+}
+
+#theory table {
+	margin: auto;
+	border-collapse:collapse;
+	border-spacing:0;
+	overflow:hidden;
+	text-align:center;
+	border-bottom: 2px solid var(--orange-white);
+}
+
+/* Table headers */
+#theory th {
+	padding:9px 20px;
+	border-top: 2px solid var(--orange-white);
+	border-bottom: 2px solid var(--orange-white);
+	font-size:14px;
+	word-break:normal;
+	font-weight:bold;
+	vertical-align:middle;
+}
+
+/* Table rows */
+#theory td {
+	padding:9px 20px;
+	font-size:14px;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	word-break:normal;
+	text-align:left;
+	vertical-align:middle;
+}
+
+/* Style of ID chain next to h2 elements */
+.anchor-link,
+.anchor-link:hover {
+	position: relative;
+	bottom: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+/* Style of chain image */
+.anchor-link img {
+	width:17px;
+	height:auto;
+	max-width:17px;
+}
+
+/* Class to break html directions within a paragraph */
+.html-break {
+	word-break: break-all;
+}
+
+/* When code is inside <p> or <li> element, display it as inline code*/
+p > code,
+li > code,
+td > code {
+	padding: 2px;
+	
+	border-radius: 5px;
+	background-color: var(--orange-strong);
+	color: var(--light-white);
+}
+
+/* Div with important advises */
+.warning {
+	margin: 30px 0 15px 0;
+	padding: 5px 10px 5px 10px;
+	line-height: 1.5;
+	border: 2px solid var(--dark-red);
+	border-radius: 2px;
+	box-shadow: 0 4px 8px 0 rgba(234,74,89, 0.2), 0 6px 20px 0 rgba(234,74,89, 0.19);
+}
+
+/* Div for accesibility advises */
+.accesibility {
+	margin: 30px 0 15px 0;
+	padding: 5px 10px 5px 10px;
+	line-height: 1.5;
+	border: 2px solid var(--dark-orange);
+	border-radius: 2px;
+	box-shadow: 0 4px 8px 0 rgba(222,147,95, 0.2), 0 6px 20px 0 rgba(222,147,95, 0.19);
+}
+
+.accesibility > span {
+	position: relative;
+	bottom: 15px;
+	padding:9px;
+	border-radius: 2px;
+	background-color: var(--dark-orange);
+	color: var(--orange-medium);
+	font-weight: 700;
+}
+
+.accesibility blockquote {
+	padding: 12px;
+	font-family: monospace;
+	border-left: 6px solid var(--light-orange);
+	color: var(--light-orange);
+}
+
+.warning > span {
+	position: relative;
+	bottom: 15px;
+	padding:7px;
+	border-radius: 2px;
+	background-color: var(--dark-red);
+	color: var(--orange-medium);
+	font-weight: 700;
+}
+
+.warning > p,
+.responsive > p {margin: 0; padding: 0}
+
+.example-box {
+	display: block;
+	margin: 1em 0 3em 0;
+	border-radius: 3px;
+	border: 2px solid var(--orange-soft);
+}
+
+
+.example-box figcaption {
+	display: block;
+	border-bottom:1px solid var(--orange-soft);
+
+	font-weight:bold;
+	font-size: 0.9em;
+	font-style: normal;
+	background:var(--orange-soft);
+	color:var(--orange-medium);
+	padding:5px 10px 4px 10px;
+	text-align: left;
+}
+
+.example-box div {
+	margin-bottom: 10px;
+	padding: 20px 15px;
+	background-color: var(--black-soft);
+}
+
+.indice {
+	line-height: 0.5 !important;
+}
+
+hr {
+	margin: 30px auto 30px auto;
+}
+/* Direction Arrows
+   ========================================================================== */
+
+/**
+ * Left arrow
+ *
+ * Its fixed left at the middle of the page. Contains one <i> element 
+ * with ".left" class that rotate the arrow to the left
+ *
+ * 1. In the middle
+ * 2. Left position
+ * 3. Rotate to the left
+ */
+
+.to-left-page {
+	position: fixed;
+	top: 50%; /* 1 */
+	left: 15vw; /* 2 */
+	
+	padding: 15px;
+}
+
+.left { /* 3 */
+	transform: rotate(135deg);
+	/* -webkit only for old browsers */
+	-webkit-transform: rotate(135deg);
+}
+
+/**
+ * Right arrow
+ *
+ * Its fixed left at the middle of the page
+ *
+ * 1. In the middle
+ * 2. Left
+ */
+
+.to-right-page {
+	position: fixed;
+	top: 50%;
+	right: 2vw;
+	padding: 15px;
+}
+
+.right {
+	transform: rotate(-45deg);
+	/* -webkit only for old browsers */
+	-webkit-transform: rotate(-45deg);
+}
+
+/**
+ * arrow base style
+ *
+ * Class .arrow inside the <i> prior element. Makes the arrow
+ * with the elements borders
+ *
+ * 1. Set the color and style
+ * 2. Add width
+ */
+
+.arrow {
+	display: inline-block;
+	padding: 8px; /* 2 */
+	cursor: pointer;
+	
+	border: solid var(--orange-white); /* 1 */
+	border-width: 0 5px 5px 0; /* 2 */
+}
+
+/* When hover change its color */
+.right:hover,
+.left:hover {
+	border-color: var(--dark-orange);
+}
+
+/* Responsive Arrows (small screens)
+   ========================================================================== */
+
+/**
+ * Consist in <div> with prior arrows, but more close and at the bottom of the page
+ *
+ * Remains hidden in big screens and displays in small screens
+ *
+ * In small screens:
+ * 1. Hidding lateral arrows
+ * 2. Display bottom arrows transform the "#arrow-responsive" into flex container
+ */
+
+#arrows-responsive {
+	display: none;
+}
+
+@media screen and (max-width: 1100px) {
+	/* Move laterals arrow by bottom arrows */
+	.to-right-page,
+	.to-left-page {
+		display: none; /* 1 */
+	}
+	
+	#arrows-responsive{
+		display: flex; /* 2 */
+		margin-top: 40px;
+		margin-bottom: 20px;
+		width: 90vw;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	
+	#theory {
+		font-size: 15px;
+	}
+	
+	p {
+		margin-bottom: 8px;
+	}
+}
+
+/* ==========================================================================
+   Figure environments
+   ========================================================================== */
+
+/**
+ * Saving the images and code in theory environment
+ *
+ * The class ".code" is based on James Edwards examples
+ */
+
+/* Images figure container
+   ========================================================================== */
+
+/**
+ * Must be integrated by <img> element with class ".theory-img"
+ */
+
+.image-figure {
+	margin: 0;
+}
+
+.image-figure img {
+	display: block;
+	width: 50vw;
+	max-width: 50vw;
+	margin: auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+	0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width: 1100px) {
+	.image-figure img {
+		width: 85vw;
+		max-width: 85vw;
+	}
+}
+
+.image-figure figcaption {
+	font-style: italic;
+	text-align: center;
+}
+
+/* Code figure container
+   ========================================================================== */
+/**
+ * Must be integrated by <figure> element with class ".code"
+ */
+figure.code {
+	display:block;
+	
+	margin:1em 0;
+
+	border:2px solid var(--orange-soft);
+	border-radius:3px;
+	color:#EFE6C9;
+	background:var(--orange-medium);
+}
+
+figure.code figcaption {
+	display:block;
+	
+	padding:5px 10px 4px 10px;
+	border-bottom:1px solid var(--orange-soft);
+	
+	font-weight:bold;
+	font-size: 0.9em;
+	font-style: normal;
+	background:var(--orange-soft);
+	color:var(--orange-medium);
+	text-align: left;
+}
+
+/**
+ * re-factor the existing styles so that the layout
+ * is on the inner code element rather than the outer pre,
+ * and extend the font reset to all descendents
+ */
+.pre, pre * {
+	font: monospace;
+}
+
+pre {
+	font-size:0.9em;
+}
+
+pre, pre code, pre samp {
+	display:block;
+	margin:0;
+	
+	cursor:text;
+}
+
+pre code, pre samp {
+	/* explicit white-space is needed for IE7 */
+	white-space:pre;
+	
+	padding:10px;
+	-moz-tab-size:4;
+	-o-tab-size:4;
+	tab-size:4;
+	
+	overflow-x:auto;
+	
+	/* Allow contenteditable in Safari */
+	word-wrap: normal;
+}
+
+/* extra layout rules for the pre when the numbers column is present */
+pre.line-numbers {
+	position:relative;
+}
+pre.line-numbers code, 
+pre.line-numbers samp {
+	margin-left:3em;
+	border-left:1px solid var(--orange-soft);
+}
+
+/* layout and counter rules for the numbers column */
+pre.line-numbers > div {
+	display:block;
+	
+	position:absolute;
+	top:0;
+	left:0;
+	
+	height:100%;
+
+
+	background:var(--orange-medium);
+	overflow:hidden;
+
+	counter-reset:line;
+}
+
+/* layout and counter rules for each individual number */
+pre.line-numbers > div > span {
+	display:block;
+	width:2.5em;
+	padding:0 0.5em 0 0;
+	
+	text-align:right;
+
+	color:var(--orange-white);
+
+	overflow:hidden;
+
+	counter-increment:line;
+}
+
+pre.line-numbers > div > span::before {
+	content:counter(line);
+}
+
+pre.line-numbers > div > span:first-child {
+	/* adjust the first number's position 
+	   to allow for the code element's padding-top */
+	margin-top:10px;
+}
+pre.line-numbers > div > span:nth-child(odd) {
+	background:var(--orange-strong);
+}
+
+/* negate the numbers column for print since it uses pre-wrap */
+@media print {
+	pre code {
+		overflow-x:visible;
+		white-space:pre-wrap;
+	}
+	pre.line-numbers div {
+		display:none;
+	}
+	pre.line-numbers > code, 
+	pre.line-numbers > samp {
+		margin-left:0;
+	}
+}
+
+/* Code Highlighting */
+
+/* programming keywords/constants/CSS property names/HTML tags and attribute names */
+pre b 
+{
+  font-weight:normal;
+  color:#3890E9;
+}
+
+/* programming strings/CSS strings/HTML attribute values */
+pre u, pre u b
+{
+  text-decoration:none;
+  color:#5DA713;
+}
+
+/* Coments */
+pre i, pre i *, pre i * *
+{
+  letter-spacing:-0.1em;
+  text-decoration:none;
+  font-style:normal;
+  color:#EC5252;
+}
+
+/* ==========================================================================
+   Style of the div with the intro, linking to the FCC page
+   ========================================================================== */
+
+#fcc {
+	padding: 10px;
+	color: var(--orange-medium);
+	background-color: var(--light-orange);
+	border: 10px solid var(--orange-medium);
+}
+
+#fcc h1 {
+	font-size:32px;
+	font-weight: 700;
+}
+
+#fcc a {
+	padding: 6px;
+	color: var(--light-white);
+	background-color: var(--orange-medium);
+	font-size:22px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+#fcc p {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+#fcc-image {
+	width: 20%;
+	max-width: 20%;
+	height: auto;
+}
+
+@media screen and (max-width: 1100px) {
+	#fcc {
+		border: none;
+	}
+	
+	#fcc-image {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#fcc.flex {
+		padding: 20px;
+		flex-direction: column;
+	}
+}
