@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>HTML responsive design docs</title>
+
+	<!-- the edge of the website should follow the edge of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- style -->
+	<link rel="stylesheet" href="estilo/style.css">
+
+	<!-- scripts -->
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+<header>
+
+	<!-- navbar -->
+	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
+		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<p id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></p>
+		<!-- The link with class="toc-icon" is used to open and close the TOC on small screens -->
+		<a href="javascript:void(0);" class="toc-icon" onclick="myFunction()">Table of Contents</a>
+		<!-- GitHub logo -->
+		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
+			<img src="img/github-logo.svg">
+		</a>
+	</nav>
+
+</header>
+
+<!-- Table Of Contents -->
+<div id="table-of-contents" class="TOC">
+	<p class="title">HTML5</p>
+	<a href="introduccion.html" class="subtitle">Introducción</a>
+	<a href="elementos-basicos.html" class="subtitle">Elementos básicos</a>
+	<a href="formato.html" class="subtitle">Formato</a>
+	<a href="encabezados.html" class="subtitle">Encabezados</a>
+	<a href="parrafos.html" class="subtitle">Párrafos</a>
+	<a href="imagenes.html" class="subtitle">Imágenes</a>
+	<a href="enlaces.html" class="subtitle">Enlaces</a>
+	<a href="listas.html" class="subtitle">Listas</a>
+	<a href="formularios.html" class="subtitle">Formularios</a>
+	<a href="etiquetas-responsive.html" class="subtitle">Etiquetas <i>Responsive</i></a>
+</div>
+
+<!-- Layaout for the theory -->
+<div id="canvas">
+<!-- FCC intro container -->
+	<div id="fcc" class="flex jc-sa ai-c">
+		<div>
+			<h1>Apuntes del curso Responsive Web Design</h1>
+			<a href="https://www.freecodecamp.org/learn" target="_blank">freeCodeCamp curriculum</a>
+			<p>HTML5 · CSS3 · Accesibilidad · Diseño <i>responsive</i></p>
+		</div>
+		<img id="fcc-image" src="img/fcc-logo-plain.svg" alt="Free code camp logo">
+	</div>
+
+	<!-- Theory Block -->
+	<div id="theory">
+		<div id="materiales">
+			<p>Se han complementado con información procedente de</p>
+			<ul>
+				<a href="https://www.w3schools.com/" target="_blank" ><li>W3schools.com</li></a>
+				<a href="https://html.spec.whatwg.org/" target="_blank"><li>HTML Living Standard</li></a>
+				<a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials" target="_blank"><li>MDN Web Docs</li></a>
+				<a href="https://websemantics.uk/" target="_blank" ><li>Web Semantics</li></a>
+			</ul>
+		</div>
+
+		<div id="code-chunks">
+			<p>Los fragmentos de código se han desarrollado conforme a las <a href="https://www.sitepoint.com/best-practice-for-code-examples/" target="_blank">buenas prácticas para los códigos de ejemplo</a>, de James Edwards. Los carácteres HTML se han <i>eludido</i> mediante el <a href="https://websemantics.uk/tools/escaping-html/" target="_blank">convertidor de textos (escaping tool) de WebSemantics</a>. Otra opción es <a href="https://websemantics.uk/articles/displaying-code-in-web-pages/" target="_blank">utilizar código PHP</a>, convirtiendo automáticamente el texto en el servidor.</p>
+			<p>Los archivos <code>.html</code> se han validado con la <a href="https://validator.w3.org/" target="_blank">herramienta de validación de W3C</a>.</p>
+		</div>
+	</div><!-- #theory -->
+
+	<!-- Right arrow to jump page -->
+	<div class="to-right-page">
+		<a href="introduccion.html"><i class="right arrow"></i></a>
+	</div>
+
+	<!-- Two more arrows to display in small screens at the end of the theory -->
+	<div id="arrows-responsive">
+		<a href="introduccion.html"><i class="right arrow"></i></a>
+	</div>
+</div><!-- #canvas -->
+
+</body>
+</html>

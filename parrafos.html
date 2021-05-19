@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>HTML responsive design docs</title>
+
+	<!-- The edge of the website should follow the edge of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- style -->
+	<link rel="stylesheet" href="estilo/style.css">
+
+	<!-- scripts -->
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+<header>
+
+	<!-- navbar -->
+	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
+		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<p id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></p>
+		<!-- The link with class="toc-icon" is used to open and close the TOC on small screens -->
+		<a href="javascript:void(0);" class="toc-icon" onclick="myFunction()">Table of Contents</a>
+		<!-- GitHub logo -->
+		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
+			<img src="img/github-logo.svg">
+		</a>
+	</nav>
+
+</header>
+
+<!-- Table Of Contents -->
+<div id="table-of-contents" class="TOC">
+	<p class="title">HTML5</p>
+	<a href="introduccion.html" class="subtitle">Introducción</a>
+	<a href="elementos-basicos.html" class="subtitle">Elementos básicos</a>
+	<a href="formato.html" class="subtitle">Formato</a>
+	<a href="encabezados.html" class="subtitle">Encabezados</a>
+	<a class="subtitle active">Párrafos</a>
+	<a href="imagenes.html" class="subtitle">Imágenes</a>
+	<a href="enlaces.html" class="subtitle">Enlaces</a>
+	<a href="listas.html" class="subtitle">Listas</a>
+	<a href="formularios.html" class="subtitle">Formularios</a>
+	<a href="etiquetas-responsive.html" class="subtitle">Etiquetas <i>Responsive</i></a>
+</div>
+
+<!-- Layaout for the theory -->
+<div id="canvas">
+
+	<!-- Left arrow -->
+	<div class="to-left-page" id="left-arrow">
+		<a href="encabezados.html"><i class="left arrow"></i></a>
+	</div>
+
+	<!-- Theory Block -->
+	<div id="theory">
+		<h1>Párrafos</h1>
+		<p id="description-code1">Sirven para representar texto, utilizando las etiquetas <code>&lt;p&gt;&lt;/p&gt;</code>. Dentro pueden colocarse elementos que modifican su representación normal:</p>
+		<table>
+			<thead>
+				<tr>
+					<th>HTML</th>
+					<th>Markdown</th>
+					<th>Resultado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>H&lt;sup&gt;+&lt;/sup&gt;</code></td>
+					<td><code>H^+^</code></td>
+					<td>H<sup>+</sup></td>
+				</tr>
+				<tr>
+					<td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+					<td><code>H~2~O</code></td>
+					<td>H<sub>2</sub>O</td>
+				</tr>
+				<tr>
+					<td><code>&lt;b&gt;negrita&lt;/b&gt;</code></td>
+					<td><code>**negrita**</code></td>
+					<td><b>negrita</b></td>
+				</tr>
+				<tr>
+					<td><code>&lt;i&gt;cursiva&lt;/i&gt;</code></td>
+					<td><code>*cursiva*</code></td>
+					<td><i>cursiva</i></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>Los párrafos siempre comienzan en una nueva línea, y los navegadores suelen representarlos con un espacio en blanco antes y después del párrafo.</p>
+		<p id="description-code1">Por lo demás, su representación está condicionada al tamaño de la página donde se representa. Su estilo no puede modificarse añadiendo espacios o líneas adicionales en el código HTML, pues serán eliminadas automáticamente cuando se carge la página</p>
+
+		<figure class="code">
+			<figcaption id="caption-code1">Párrafos con espacios y líneas adicionales</figcaption>
+			<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;p&gt;</b>
+This paragraph
+contains a lot of lines
+in the source code,
+but the browser
+ignores it.
+<b>&lt;/p&gt;</b>
+
+<b>&lt;p&gt;</b>
+This paragraph
+contains         a lot of spaces
+in the source         code,
+but the        browser
+ignores it.
+<b>&lt;/p&gt;</b></code></pre>
+		</figure>
+
+		<!-- Example box -->
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<p>
+					This paragraph
+					contains a lot of lines
+					in the source code,
+					but the browser
+					ignores it.
+				</p>
+				<p>
+					This paragraph
+					contains         a lot of spaces
+					in the source         code,
+					but the        browser
+					ignores it.
+				</p>
+			</div>
+		</figure>
+
+		<h2 id="conservar-formato-html">Conservar formato
+			<a href="#conservar-formato-html" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code2">Es posible representar un texto conservando la estructura del código HTML, rodeándolo de la etiqueta <code>&lt;pre&gt;</code>:
+		<figure class="code">
+			<figcaption id="caption-code2">Representar un poema preservando espacios y saltos de línea</figcaption>
+			<pre aria-labelledby="caption-code2" aria-describedby="description-code2"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;pre&gt;</b>
+Escribo como escribo,
+A veces deliberadamente mal,
+Para que os llegue bien.
+
+- Gloria Fuertes
+<b>&lt;/pre&gt;</b></code></pre>
+		</figure>
+		
+		<!-- Example box -->
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<pre>Escribo como escribo,
+A veces deliberadamente mal,
+Para que os llegue bien.
+
+- Gloria Fuertes
+				</pre>
+			</div>
+		</figure>
+
+		<h2 id="reglas-horizontales">Reglas horizontales
+			<a href="#reglas-horizontales" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code3">La etiqueta <code>&lt;hr&gt;</code> crea una ruptura en el contenido de una web, mostrando una línea horizontal. Se utiliza para separar contenidos.</p>
+		<p>Es una etiqueta vacía, lo que significa que no necesita etiqueta de cierre.</p>
+		<figure class="code">
+			<figcaption id="caption-code3">Reglas horizontales</figcaption>
+			<pre aria-labelledby="caption-code3" aria-describedby="description-code3"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;h1&gt;</b>This is heading 1<b>&lt;/h1&gt;</b>
+<b>&lt;p&gt;</b>This is some text.<b>&lt;/p&gt;</b>
+<b>&lt;hr&gt;</b>
+<b>&lt;h2&gt;</b>This is heading 2<b>&lt;/h2&gt;</b>
+<b>&lt;p&gt;</b>This is some other text.<b>&lt;/p&gt;</b>
+<b>&lt;hr&gt;</b></code></pre>
+		</figure>
+		<!-- Example box -->
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<h1>This is heading 1</h1>
+				<p>This is some text.</p>
+				<hr>
+				<h2>This is heading 2</h2>
+				<p>This is some other text.</p>
+				<hr>
+			</div>
+		</figure>
+
+	</div><!-- #theory -->
+
+	<!-- Right arrow -->
+	<div class="to-right-page">
+		<a href="imagenes.html"><i class="right arrow"></i></a>
+	</div>
+
+	<!-- Two more arrows to display in small screens at the end of the theory -->
+	<div id="arrows-responsive">
+		<a href="encabezados.html"><i class="left arrow"></i></a>
+		<a href="imagenes.html"><i class="right arrow"></i></a>
+	</div>
+
+</div><!-- #canvas -->
+
+<!-- Transform pre elements into code chunks -->
+<script>
+(function()
+	{
+	//filter IE8 and earlier which don't support the generated content
+	if(typeof(window.getComputedStyle) == 'undefined') 
+	{ 
+	return; 
+	}
+
+	//get the collection of class "code-chunk" elements
+	var pre = document.getElementsByTagName('pre');
+
+	//now iterate through the collection
+	for(var len = pre.length, i = 0; i < len; i ++)
+	{
+		//get the CODE or SAMP element inside it, 
+		//or just in case there isn't one, continue to the next PRE
+		var code = pre[i].getElementsByTagName('code').item(0);
+		if(!code)
+		{
+			code = pre[i].getElementsByTagName('samp').item(0);
+			if(!code)
+			{
+				continue;
+			}
+		}
+
+		//create a containing DIV column (but don't append it yet)
+		//including aria-hidden so that ATs don't read the numbers
+		var column = document.createElement('div');
+		column.setAttribute('aria-hidden', 'true');
+
+		//split the code by line-breaks to count the number of lines
+		//then for each line, add an empty span inside the column
+		for(var n = 0; n < code.innerHTML.split(/[\n\r]/g).length; n ++)
+		{
+			column.appendChild(document.createElement('span'));
+		}
+
+		//now append the populated column before the code element
+		pre[i].insertBefore(column, code);
+
+		//finally add an identifying class to the PRE to trigger the extra CSS
+		pre[i].className = 'line-numbers';
+	}
+
+})();
+</script>
+</body>
+</html>

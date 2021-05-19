@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>HTML responsive design docs</title>
+
+	<!-- The edge of the website should follow the edge of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- style -->
+	<link rel="stylesheet" href="estilo/style.css">
+
+	<!-- scripts -->
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+<header>
+
+	<!-- navbar -->
+	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
+		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<p id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></p>
+		<!-- The link with class="toc-icon" is used to open and close the TOC on small screens -->
+		<a href="javascript:void(0);" class="toc-icon" onclick="myFunction()">Table of Contents</a>
+		<!-- GitHub logo -->
+		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
+			<img src="img/github-logo.svg">
+		</a>
+	</nav>
+
+</header>
+
+<!-- Table Of Contents -->
+<div id="table-of-contents" class="TOC">
+	<p class="title">HTML5</p>
+	<a class="subtitle active">Introducción</a>
+	<a href="elementos-basicos.html" class="subtitle">Elementos básicos</a>
+	<a href="formato.html" class="subtitle">Formato</a>
+	<a href="encabezados.html" class="subtitle">Encabezados</a>
+	<a href="parrafos.html" class="subtitle">Párrafos</a>
+	<a href="imagenes.html" class="subtitle">Imágenes</a>
+	<a href="enlaces.html" class="subtitle">Enlaces</a>
+	<a href="listas.html" class="subtitle">Listas</a>
+	<a href="formularios.html" class="subtitle">Formularios</a>
+	<a href="etiquetas-responsive.html" class="subtitle">Etiquetas <i>Responsive</i></a>
+</div>
+
+<!-- Layaout for the theory -->
+<div id="canvas">
+
+	<!-- Left arrow -->
+	<div class="to-left-page" id="left-arrow">
+		<a href="index.html"><i class="left arrow"></i></a>
+	</div>
+
+	<!-- Theory Block -->
+	<div id="theory">
+		<h1>Introducción</h1>
+
+		<h2 id="que_es_html">¿Qué es HTML?
+			<a href="#que_es_html" alt="link a la sección que_es_html" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+
+		<ul>
+			<li>Lenguaje de marcado o sistema de anotación (<i>HyperText Markup Language</i>)</li>
+			<li><strong>Describe la estructura de una página web</strong></li>
+			<li>Es interpretado por los navegadores</li>
+			<li>La mayoría de anotaciones se basan en etiquetas de <strong>inicio</strong> y <strong>cierre</strong> que dotan de sentido al contenido</li>
+		</ul>
+
+		<h2 id="origen">Origen
+			<a href="#origen" alt="link a la sección origen" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p>Las primeras páginas web, con la creación de la <em>World Wide Web</em>, solían contener documentos estáticos con referencias a otros documentos, compuestas por enlaces con hipertexto. Eran utilizados por el navegador para cargar el documento al que hacían referencia, evitando que el usuario tuviera que buscarlos manualmente.</p>
+
+		<figure class="image-figure">
+			<img src="img/first-web.png" alt="Primera página web"><br>
+			<figcaption>Versión de 1992 de la primera página web, creada por Tim Berners-Lee.</figcaption>
+		</figure>
+
+		<p>A medida que las web y sus aplicaciones se hacían más complejas, el grupo W3Consortium actualizó el estándar de HTML para asegurar una visualización correcta de las páginas web en todos los navegadores. La última versión es <strong>HTML5</strong>.</p>
+	</div><!-- #theory -->
+
+	<!-- Right arrow -->
+	<div class="to-right-page">
+		<a href="elementos-basicos.html"><i class="right arrow"></i></a>
+	</div>
+
+	<!-- Two more arrows to display in small screens at the end of the theory -->
+	<div id="arrows-responsive">
+		<a href="index.html"><i class="left arrow"></i></a>
+		<a href="elementos-basicos.html"><i class="right arrow"></i></a>
+	</div><!-- #canvas -->
+
+</div>
+</body>
+</html>

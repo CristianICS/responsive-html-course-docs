@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>HTML responsive design docs</title>
+
+	<!-- The edge of the website should follow the edge of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- style -->
+	<link rel="stylesheet" href="estilo/style.css">
+
+	<!-- scripts -->
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+<header>
+
+	<!-- navbar -->
+	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
+		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<p id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></p>
+		<!-- The link with class="toc-icon" is used to open and close the TOC on small screens -->
+		<a href="javascript:void(0);" class="toc-icon" onclick="myFunction()">Table of Contents</a>
+		<!-- GitHub logo -->
+		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
+			<img src="img/github-logo.svg">
+		</a>
+	</nav>
+
+</header>
+
+<!-- Table Of Contents -->
+<div id="table-of-contents" class="TOC">
+	<p class="title">HTML5</p>
+	<a href="introduccion.html" class="subtitle">Introducción</a>
+	<a href="elementos-basicos.html" class="subtitle">Elementos básicos</a>
+	<a href="formato.html" class="subtitle">Formato</a>
+	<a href="encabezados.html" class="subtitle">Encabezados</a>
+	<a href="parrafos.html" class="subtitle">Párrafos</a>
+	<a href="imagenes.html" class="subtitle">Imágenes</a>
+	<a href="enlaces.html" class="subtitle">Enlaces</a>
+	<a href="listas.html" class="subtitle">Listas</a>
+	<a href="formularios.html" class="subtitle">Formularios</a>
+	<a class="subtitle active">Etiquetas <i>Responsive</i></a>
+</div>
+
+<!-- Layaout for the theory -->
+<div id="canvas">
+
+	<!-- Left arrow -->
+	<div class="to-left-page" id="left-arrow">
+		<a href="formularios.html"><i class="left arrow"></i></a>
+	</div>
+
+	<!-- Theory Block -->
+	<div id="theory">
+		<h1>Etiquetas <i>Responsive</i></h1>
+		<p></p>
+
+		<h2 id="forms-elements">Contenido principal
+			<a href="#forms-elements" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code1">Se refiere al contenido de la web relacionado con su tema central, englobado entre etiquetas <code>&lt;main&gt;</code></p>
+		<p>Debería haber una sección de contenido principal por página.</p>
+		<p>No debe contener ningún contenido que se repita en varias páginas, e.g., menús de navegación, información de autoría, formularios de búsqueda y logos corporativos.</p>
+		<p>No debe ser descendiente de los elementos <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;header&gt;</code>, y <code>&lt;nav&gt;</code>.</p>
+		<!-- Responsive Box -->
+		<div class="accesibility">
+			<span>Accesibilidad</span>
+			<p>La mayoría de <i>screenreaders</i> incorporan una funcionalidad que les permite ir directamente al contenido principal, i.e., al contenido dentro de <code>&lt;main&gt;</code>.</p>
+		</div>
+
+		<figure class="code">
+			<figcaption id="caption-code1">Ejemplo de contenido principal</figcaption>
+			<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;main&gt;
+	&lt;h1&gt;</b>Most Popular Browsers<b>&lt;/h1&gt;
+	&lt;p&gt;</b>Chrome, Firefox, and Edge are the most used browsers today.<b>&lt;/p&gt;
+
+	&lt;article&gt;
+    &lt;h2&gt;</b>Google Chrome<b>&lt;/h2&gt;
+    &lt;p&gt;</b>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!<b>&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h2&gt;</b>Mozilla Firefox<b>&lt;/h2&gt;
+    &lt;p&gt;</b>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most popular web browser since January, 2018.<b>&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h2&gt;</b>Microsoft Edge<b>&lt;/h2&gt;
+    &lt;p&gt;</b>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced Internet Explorer.<b>&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;</b></code></pre>
+		</figure>
+
+		<h2 id="forms-elements">Artículos y secciones
+			<a href="#forms-elements" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p><code>&lt;article&gt;</code> se utiliza para representar contenido independiente, e.g., una entrada de blog, el post de un foro o nuevos artículos en un períodico.</p>
+		<p><code>&lt;section&gt;</code> agrupa contenidos relacionados temáticamente.</p>
+		<p>Pueden usarse juntas si se requiere, e.g., si una noticia se incluye en un contenedor <code>&lt;article&gt;</code>, las diferentes partes de la crónica constituirán una sección. Cuando no exista relación entre grupos de contenido, es preferible utilizar <code>&lt;div&gt;</code>.</p>
+
+	</div><!-- #theory -->
+
+	<!-- Right arrow -->
+	<div class="to-right-page">
+		<a href="prueba-de-seccion.html"><i class="right arrow"></i></a>
+	</div>
+
+	<!-- Two more arrows to display in small screens at the end of the theory -->
+	<div id="arrows-responsive">
+		<a href="formularios.html"><i class="left arrow"></i></a>
+		<a href="prueba-de-seccion.html"><i class="right arrow"></i></a>
+	</div>
+
+</div><!-- #canvas -->
+
+<!-- Transform pre elements into code chunks -->
+<script>
+(function()
+	{
+	//filter IE8 and earlier which don't support the generated content
+	if(typeof(window.getComputedStyle) == 'undefined') 
+	{ 
+	return; 
+	}
+
+	//get the collection of class "code-chunk" elements
+	var pre = document.getElementsByTagName('pre');
+
+	//now iterate through the collection
+	for(var len = pre.length, i = 0; i < len; i ++)
+	{
+		//get the CODE or SAMP element inside it, 
+		//or just in case there isn't one, continue to the next PRE
+		var code = pre[i].getElementsByTagName('code').item(0);
+		if(!code)
+		{
+			code = pre[i].getElementsByTagName('samp').item(0);
+			if(!code)
+			{
+				continue;
+			}
+		}
+
+		//create a containing DIV column (but don't append it yet)
+		//including aria-hidden so that ATs don't read the numbers
+		var column = document.createElement('div');
+		column.setAttribute('aria-hidden', 'true');
+
+		//split the code by line-breaks to count the number of lines
+		//then for each line, add an empty span inside the column
+		for(var n = 0; n < code.innerHTML.split(/[\n\r]/g).length; n ++)
+		{
+			column.appendChild(document.createElement('span'));
+		}
+
+		//now append the populated column before the code element
+		pre[i].insertBefore(column, code);
+
+		//finally add an identifying class to the PRE to trigger the extra CSS
+		pre[i].className = 'line-numbers';
+	}
+
+})();
+</script>
+</body>
+</html>
