@@ -1,5 +1,5 @@
 /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the icon */
-function myFunction() {
+function tocFunction_responsive() {
   var x = document.getElementById("table-of-contents");
   if (x.className === "TOC") {
     x.className += " responsive";
