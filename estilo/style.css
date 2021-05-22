@@ -38,7 +38,7 @@
  *
  * 1. Remove additional spaces between elements
  * 2. Display in a whole screen
- * 3. Set base font and font size
+ * 3. Set base font-style
  * 4. Add white as default color text
  * 5. Remove black border in selected buttons
  */
@@ -57,7 +57,6 @@ body {
 	
 	/* Other */
 	font-family: sans-serif; /* 3 */
-	font-size: ; /* 3 */
 	background-color: var(--orange-medium);
 	color: var(--orange-white); /* 4 */
 }
@@ -167,7 +166,6 @@ li {
 	background: none;
 	border: solid 1px transparent;
 	border-radius: 0;
-	font-size: 22px;
 	text-align: center;
 }
 
@@ -185,7 +183,7 @@ li {
 .button-toc > span {
 	/* Display & Box Model */
 	display: block; /* 1 */
-	width: 26px;
+	width: 28px;
 	height: 4px;
 	
 	/* Other */
@@ -247,18 +245,19 @@ li {
 	}
 
 	#main-title {
-		font-size: 15px; /* 5 */
+		font-size: 0.95em; /* 5 */
 	}
 }
 
 /* When the screen is less than 300 pixels wide, small font-size */
 @media screen and (max-width: 300px) {
-	.toc-icon {
-		font-size: 11px;
-	}
-	
 	#main-title {
-		font-size: 11px;
+		font-size: 0.8em;
+	}
+
+	.button-toc > span {
+		width: 22px;
+		height: 4px;
 	}
 }
 
@@ -291,7 +290,7 @@ li {
 p.title {
 	padding-left: 15px;
 	
-	font-size: 18px;
+	font-size: 1.2em;
 	font-weight: 600;
 	color: var(--light-white);
 }
@@ -305,7 +304,7 @@ a.subtitle {
 	box-sizing: border-box;
 
 	font-weight: 700;
-	font-size: 15px;
+	font-size: 0.95em;
 	text-decoration: none;
 	border-bottom: 1px solid var(--orange-white);
 	color: var(--orange-white);
@@ -345,12 +344,12 @@ a.subtitle.active {
 	.TOC.responsive p.title {
 		padding-left: 15px;
 		margin-bottom: 10px;
-		font-size: 18px;
+		font-size: 1.1em;
 		color: var(--light-white);
 	}
 	
 	.TOC.responsive a.subtitle {
-		font-size: 16px;
+		font-size: 0.9em;
 		text-align: left;
 		color: var(--orange-white);
 	}
@@ -418,7 +417,7 @@ a.subtitle.active {
 	
 	text-align: justify;
 	letter-spacing: 1px;
-	font-size: 16px;
+	font-size: 1em;
 
 }
 
@@ -506,7 +505,7 @@ a.subtitle.active {
 	padding:9px 20px;
 	border-top: 2px solid var(--orange-white);
 	border-bottom: 2px solid var(--orange-white);
-	font-size:14px;
+	font-size:0.9em;
 	word-break:normal;
 	font-weight:bold;
 	vertical-align:middle;
@@ -515,7 +514,7 @@ a.subtitle.active {
 /* Table rows */
 #theory td {
 	padding:9px 20px;
-	font-size:14px;
+	font-size:0.85em;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 	word-break:normal;
 	text-align:left;
@@ -746,7 +745,7 @@ hr {
 @media screen and (max-width: 500px) {
 	
 	#theory {
-		font-size: 15px;
+		font-size: 0.98em;
 	}
 	
 	p {
@@ -968,7 +967,7 @@ pre i, pre i *, pre i * *
 }
 
 #fcc h1 {
-	font-size:32px;
+	font-size:2.2em;
 	font-weight: 700;
 }
 
@@ -976,13 +975,13 @@ pre i, pre i *, pre i * *
 	padding: 6px;
 	color: var(--light-white);
 	background-color: var(--orange-medium);
-	font-size:22px;
+	font-size:1.3em;
 	font-weight: 600;
 	text-decoration: none;
 }
 
 #fcc p {
-	font-size: 18px;
+	font-size: 1.1em;
 	font-weight: 400;
 }
 
