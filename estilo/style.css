@@ -620,7 +620,7 @@ td > code {
 .accesibility blockquote {
 	padding: 12px;
 	font-family: monospace;
-	border-left: 6px solid var(--light-orange);
+	border-left: 3px solid var(--light-orange);
 	color: var(--light-orange);
 }
 
