@@ -67,12 +67,13 @@
 	<!-- Theory Block -->
 	<div id="theory">
 		<h1>Elementos básicos</h1>
+		<p id="description-code1">Un documento <code>.html</code> tiene la siguiente forma:</p>
 		<figure class="code">
 			<figcaption id="caption-code1">Estructura básica de código HTML</figcaption>
 			<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><i>&lt;!DOCTYPE html&gt;</i>
 <b>&lt;html lang</b>="<u>es</u>"<b>&gt;</b>
 <b>&lt;head&gt;</b>
-	<b>&lt;title&gt;</b>HTML Style Guide and Coding Conventions<b>&lt;/title&gt;</b>
+	<b>&lt;title&gt;</b>HTML Example Page<b>&lt;/title&gt;</b>
 	<b>&lt;meta charset</b>="<u>utf-8</u>"<b>&gt;</b>
 	<b>&lt;meta name</b>="<u>viewport</u>" <b>content</b>="<u>width=device-width, user-scalable=no</u>"<b>&gt;</b>
 <b>&lt;/head&gt;</b>
@@ -81,6 +82,11 @@
 <b>&lt;p&gt;</b>This is a skeleton document.<b>&lt;/p&gt;</b>
 <b>&lt;/body&gt;</b>
 <b>&lt;/html&gt;</b></code></pre>
+		</figure>
+		<p>Y su representación en el navegador quedaría tal que así:</p>
+		<figure class="image-figure">
+			<img src="img/example_web.svg" alt="Vista de la web de prueba en un navegador"><br>
+			<figcaption>Visualización de la página web de prueba en el navegador <i>Chrome</i>.</figcaption>
 		</figure>
 
 		<h2 id="define-languaje">Declarar lenguaje
@@ -133,6 +139,12 @@
 				</li>
 			</ol>
 
+		<!-- Warning Box -->
+		<div class="warning">
+			<span>Advertencia</span>
+			<p>En la documentación de <a href="https://html.spec.whatwg.org/multipage/syntax.html#optional-tags" target="_blank">HTML living standard</a> se aconseja evitar una serie de etiquetas opcionales, entre las que se encuentran <code>html</code> y <code>head</code>. Sin embargo, en las <a href="https://www.w3schools.com/htmL/html5_syntax.asp" target="_blank">guías de código del W3Consortium</a> se recomienda no omitirlos debido a la existencia de posibles errores en navegadores antiguos.</p>
+		</div>
+
 		<h2 id="body-block">Bloque &lt;body&gt;
 			<a href="#body-block" class="anchor-link">
 				<img src="img/link.svg" alt="">
@@ -146,11 +158,6 @@
 			<blockquote cite="https://www.freecodecamp.org/">In web development, <b>accessibility</b> refers to web content and a <abbr title="User Interface">UI</abbr> that can be understood, navigated, and interacted with by a broad audience. This includes people with visual, auditory, mobility, or cognitive disabilities.</blockquote>
 		</div>
 
-		<!-- Warning Box -->
-		<div class="warning">
-			<span>Advertencia</span>
-			<p>En la documentación de <a href="https://html.spec.whatwg.org/multipage/syntax.html#optional-tags" target="_blank">HTML living standard</a> se aconseja evitar una serie de etiquetas opcionales, entre las que se encuentran <code>html</code> y <code>head</code>. Sin embargo, en las <a href="https://www.w3schools.com/htmL/html5_syntax.asp" target="_blank">guías de código del W3Consortium</a> se recomienda no omitirlos debido a la existencia de posibles errores en navegadores antiguos.</p>
-		</div>
 	</div><!-- #theory -->
 
 	<!-- Right arrow -->
