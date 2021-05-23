@@ -99,7 +99,7 @@
 				</ul>
 			</li>
 			<li><b>Evitar líneas de código excesivamente largas</b> permitiendo desplazarse por el código sin tener que mover la página de izquierda a derecha. Se puede hacer una excepción con URLs largas, que podrían no funcionar si las fraccionamos.</li>
-			<li id="description-code2"><b>Separar bloques de código con una línea en blanco</b> Mejoran la legibilidad, evitar líneas vacías que no cumplan este objetivo.
+			<li id="description-code2"><b>Separar bloques de código con <span class="highlight1">una línea</span> en blanco</b> Mejoran la legibilidad. Deben evitarse las líneas vacías que no cumplan este objetivo.
 				<figure class="code">
 					<figcaption id="caption-code2">Correcta distribución de líneas en blanco</figcaption>
 					<pre aria-labelledby="caption-code2" aria-describedby="description-code2"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;body&gt;</b>
@@ -115,10 +115,11 @@ and the home of the Japanese Imperial Family.<b>&lt;/p&gt;</b>
 <b>&lt;/body&gt;</b></code></pre>
 				</figure>
 			</li>
-			<li id="description-code3"><b>Sangría de líneas</b> Debe realizarse con dos espacios. Utilizar <code>tab</code> reduce el tamaño de los archivos y permite modificar su tamaño en el editor (W3C recomienda utilizar espacios en lugar de tabulación)
+			<li id="description-code3"><b>Sangría de líneas</b> Puede realizarse con tabulación o con dos espacios. Utilizar <code>tab</code> reduce el tamaño de los archivos y permite modificar su tamaño en el editor.<br>
+			<p>La sangría debe utilizarse de acuerdo a las siguientes reglas:</p>
 				<ul>
-					<li>Las primeras etiquetas a continuación de las etiquetas iniciales de <code>html</code>, <code>body</code>, <code>style</code> y/o <code>script</code> <b> no deben contener sangría.</b></li>
-					<li><b>Elementos de las etiquetas de bloques </b><code>div</code><b>, listas y tablas</b> deben empezar en una nueva línea y estar identados.</li>
+					<li>Las primeras etiquetas a continuación de las etiquetas iniciales de <code>html</code>, <code>body</code>, <code>style</code> y/o <code>script</code> <b><span class="highlight1">no</span> deben contener sangría.</b></li>
+					<li><b>Todas las etiquetas</b> dentro de los bloques <code>div</code>, listas y/o tablas <b>deberán estar identadas</b>, y <b>la primera de ellas comenzar en una nueva línea</b>.</li>
 					<li><b>Eliminar espacios en blanco al final de las líneas</b> (e.g. <code>&lt;/p&gt;··</code>)</li>
 				</ul>
 				<figure class="code">
@@ -154,14 +155,14 @@ and the home of the Japanese Imperial Family.<b>&lt;/p&gt;</b>
 				<img src="img/link.svg" alt="">
 			</a>
 		</h2>
-		<p>El formato de los comentarios depende del número de líneas que ocupan y su contenido:</p>
+		<p>El formato de los comentarios depende del número de líneas que ocupan y de su contenido:</p>
 		<ol>
-			<li><b>Comentario en una línea</b> Debe escribirse en única línea, rodeando el texto con un espacio a cada lado
+			<li><b>Comentario en una línea</b> Debe escribirse en una única línea, con un espacio al inicio y al final del texto
 				<ul>
 					<li><code>&lt;!-- Esto es un comentario de una línea --&gt;</code></li>
 				</ul>
 			</li>
-			<li><b>Comentario en múltiples líneas</b> Debe comenzar y acabar en líneas distintas, el contenido no debe estar identado
+			<li><b>Comentario en múltiples líneas</b> Debe comenzar y acabar en líneas distintas. El contenido no debe estar identado
 				<ul>
 					<li><p><code>&lt;!--</code><br>
 					<code>This is a comment</code><br>
