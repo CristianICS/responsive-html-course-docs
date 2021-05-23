@@ -567,24 +567,21 @@ a.subtitle.active {
 	word-break: break-all;
 }
 
-/* When code is inside <p> or <li> element, display it as inline code*/
+/* When code is inside <p>, <li> or table element, display it as inline code */
+/* with the following style */
 p > code,
 li > code,
 td > code {
 	padding: 2px;
-	
+
 	border-radius: 5px;
 	background-color: var(--orange-strong);
 	color: var(--light-white);
-	font-size: 0.98em;
+	font-size: 1.2em;
 }
 
-@media screen and (max-width: 1100px) {
-	p > code,
-	li > code,
-	td > code {
-		font-size: 1em;
-	}
+td > code {
+	font-size: 1.3em !important;
 }
 
 /* Div with important advises */
@@ -859,7 +856,7 @@ figure.code figcaption {
 }
 
 pre {
-	font-size:1em;
+	font-size:1.1em;
 }
 
 pre, pre code, pre samp {
