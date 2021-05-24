@@ -70,6 +70,14 @@
 		<p>Se colocan mediante la etiqueta <code>&lt;img&gt;</code>, <abbr title="no necesita etiqueta de cierre">etiqueta vacía</abbr>.</p>
 		<p>Es obligatorio incluir el atributo <code>"alt"</code>, incluso en las imágenes con pie de figura, pues es utilizado por los lectores de pantalla para describir las imágenes a personas con discapacidad. Si es solo decorativa, la imagen debe incluir el atributo vacío <code>&lt;img alt=""&gt;</code>.</p>
 		<p>La ubicación de la imagen se escribe dentro del atributo <code>src</code>. Puede referirse a la dirección web o ser la dirección donde se localiza el archivo en local (e.g. <code>src="imgs/image-example.jpg"</code>).</p>
+		<div class="accesibility">
+			<span>Accesibilidad</span>
+			<p>Toda imagen debe incluir las propiedades <code>width</code> y <code>height</code>, controlando sus dimensiones.</p>
+			<p>Pueden escribirse dentro de la etiqueta (1) o incluirse dentro de los estilos CSS.</p> <!-- Poner la referencia a la sección CSS de imágenes -->
+			<ol>
+				<li><code>&lt;img src="img/link.svg" style="width:40px;height:auto;" alt=""&gt;</code>
+			</ol>
+		</div>
 
 		<h2 id="figure-environment">Figure
 			<a href="#figure-environment" class="anchor-link">
