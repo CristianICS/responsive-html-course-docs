@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>HTML responsive design docs</title>
+
+	<!-- The edge of the website should follow the edge of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- style -->
+	<link rel="stylesheet" href="estilo/style.css">
+
+	<!-- scripts -->
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+<header>
+
+	<!-- navbar -->
+	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
+		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<!-- The buton with class="toc-icon" is displayed in narrow screens to open and close the TOC -->
+		<button class="button-toc toc-icon" onclick="tocFunction_responsive()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<span id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></span>
+		<!-- GitHub logo -->
+		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
+			<img src="img/github-logo.svg" alt="">
+		</a>
+	</nav>
+
+</header>
+
+<!-- Table Of Contents -->
+<div id="table-of-contents" class="TOC">
+	<p class="title">HTML5</p>
+	<a href="introduccion.html" class="subtitle">Introducción</a>
+	<a href="elementos-basicos.html" class="subtitle">Elementos básicos</a>
+	<a href="formato.html" class="subtitle">Formato</a>
+	<a href="encabezados.html" class="subtitle">Encabezados</a>
+	<a href="parrafos.html" class="subtitle">Párrafos</a>
+	<a href="imagenes.html" class="subtitle">Imágenes</a>
+	<a href="enlaces.html" class="subtitle">Enlaces</a>
+	<a href="listas.html" class="subtitle">Listas</a>
+	<a href="formularios.html" class="subtitle">Formularios</a>
+	<a href="etiquetas-responsive.html" class="subtitle">Etiquetas <i>Responsive</i></a>
+	<a href="audio.html" class="subtitle">Audio</a>
+	<a class="subtitle active">Mejorar la accesibilidad</i></a>
+</div>
+
+<!-- Layaout for the theory -->
+<div id="canvas">
+
+	<!-- Left arrow -->
+	<div class="to-left-page" id="left-arrow">
+		<a href="audio.html"><i class="left arrow"></i></a>
+	</div>
+
+	<!-- Theory Block -->
+	<div id="theory">
+		<h1>Mejorar la accesibilidad</h1>
+<!-- TO DO: Add some reference webs
+		<h2 id="contrast-and-color">Contraste y selección de color
+			<a href="#contrast-and-color" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p>La lectura de una web es más sencilla cuando existe un alto contraste entre el color del texto y el del fondo sobre el que se muestra.</p>
+		<p>Las recomendaciones <b>The Web Content Accessibility Guidelines (WCAG)</b> recomiendan al menos una ratio de contraste <b>4.5 a 1</b> para un texto normal.</p>
+		<p>La ratio se calcula comparando la luminosidad de los dos colores: desde 1:1 entre un mismo color (sin contraste) al 21:1 del blanco y el negro, el mayor contraste.</p>
+		<p>Deben evitarse también las combinaciones de colores que dificulten la lectura de personas con problemas de daltonismo.</p>
+		<p>Para conseguir todo lo anterior se recomienda</p>
+		<ul>
+			<li>No colocar juntos colores que se sitúen próximos en la rueda de color</li>
+			<li>Utilizar herramientas de selección que simulen combinaciones aptas para este tipo de discapacidad</li>
+			<li>Compensar el brillo de los colores con la fórmula <i>Luma</i></li>
+		</ul>
+-->
+		<h2 id="shortcuts">Atajos de teclado
+			<a href="#shortcuts" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code1">Los elementos HTML pueden integrar el atributo <code>accesskey</code>, donde puede añadirse un comando específico que, al pulsarlo, active el elemento y permita seleccionarlo. Puede utilizarse en cualquier elemento, pero es particularmente útil cuando se aplica con los interactivos, e.g., links, formularios etc.</p>
+		<p>Este tipo de atajos permiten una navegación más eficiente a los usuarios que solo usen el teclado.</p> 
+		<figure class="code">
+			<figcaption id="caption-code1">Añadir atajo de teclado</figcaption>
+			<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;a href</b>=<u>"https://www.w3schools.com/html/"</u> <b>accesskey</b>=<u>"h"</u><b>&gt;</b>HTML tutorial<b>&lt;/a&gt;&lt;br&gt;
+&lt;a href</b>=<u>"https://www.w3schools.com/css/"</u> <b>accesskey</b>=<u>"c"</u><b>&gt;</b>CSS tutorial<b>&lt;/a&gt;
+
+&lt;p&gt;</b>The accesskey attribute specifies a shortcut key to activate/focus an element.<b>&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;</b>Note:<b>&lt;/strong&gt;</b> The shortcut is varying in different browsers:<b>&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;</b>Edge, IE, Chrome, Safari, Opera 15+: [ALT] + <b>&lt;em&gt;</b>accesskey<b>&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;</b>Opera prior version 15: [SHIFT] [ESC] + <b>&lt;em&gt;</b>accesskey<b>&lt;/em&gt;&lt;/li&gt;
+	&lt;li&gt;</b>Firefox: [ALT] [SHIFT] + <b>&lt;em&gt;</b>accesskey<b>&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</b></code></pre>
+		</figure>
+
+		<!-- Example box -->
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<a href="https://www.w3schools.com/html/" accesskey="h">HTML tutorial</a><br>
+				<a href="https://www.w3schools.com/css/" accesskey="c">CSS tutorial</a>
+
+				<p>The accesskey attribute specifies a shortcut key to activate/focus an element.</p>
+				<p><strong>Note:</strong> The shortcut is varying in different browsers:</p>
+				<ul>
+						<li>Edge, IE, Chrome, Safari, Opera 15+: [ALT] + <em>accesskey</em></li>
+						<li>Opera prior version 15: [SHIFT] [ESC] + <em>accesskey</em></li>
+						<li>Firefox: [ALT] [SHIFT] + <em>accesskey</em></li>
+				</ul>
+			</div>
+		</figure>
+
+		<h2 id="tabs">Tabulación
+			<a href="#tabs" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p>El atributo <code>tabindex</code> permite establecer el orden por el que se seleccionarán los elementos al pulsar la tecla <code>tab</code>.</p>
+		<p>Por defecto, solo algunos elementos (e.g. links y formularios) tienen activada esta opción, y al tabular la página se centra en ellos. <b>El orden se corresponde con el orden de aparición en la web</b>.</p>
+		<p>Al establecer dentro de un elemento el atributo <code>tabindex="0"</code>, permitirá que este aparezca en el flujo de tabulación. El orden de selección se modifica añadiendo valores enteros > 1</p>
+
+		<!-- Warning Box -->
+		<div class="warning">
+			<span>Advertencia</span>
+			<p>Un valor <code>tabindex</code> negativo (normalmente -1) indica que un elemento es resaltable al tabular, pero no es alcanzable por el teclado. Este método suele utilizarse para atraer la atención sobre un contenido, e.g., cuando un elemento <code>&lt;div&gt;</code>, utilizado como ventana emergente, es activado.</p>
+		</div>
+
+	</div><!-- #theory -->
+
+	<!-- Right arrow -->
+	<div class="to-right-page">
+		<a href="prueba-de-seccion.html"><i class="right arrow"></i></a>
+	</div>
+
+	<!-- Two more arrows to display in small screens at the end of the theory -->
+	<div id="arrows-responsive" class="jc-sa">
+		<a href="audio.html"><i class="left arrow"></i></a>
+		<a href="prueba-de-seccion.html"><i class="right arrow"></i></a>
+	</div>
+
+</div><!-- #canvas -->
+
+<!-- Transform pre elements into code chunks -->
+<script>
+(function()
+	{
+	//filter IE8 and earlier which don't support the generated content
+	if(typeof(window.getComputedStyle) == 'undefined') 
+	{ 
+	return; 
+	}
+
+	//get the collection of class "code-chunk" elements
+	var pre = document.getElementsByTagName('pre');
+
+	//now iterate through the collection
+	for(var len = pre.length, i = 0; i < len; i ++)
+	{
+		//get the CODE or SAMP element inside it, 
+		//or just in case there isn't one, continue to the next PRE
+		var code = pre[i].getElementsByTagName('code').item(0);
+		if(!code)
+		{
+			code = pre[i].getElementsByTagName('samp').item(0);
+			if(!code)
+			{
+				continue;
+			}
+		}
+
+		//create a containing DIV column (but don't append it yet)
+		//including aria-hidden so that ATs don't read the numbers
+		var column = document.createElement('div');
+		column.setAttribute('aria-hidden', 'true');
+
+		//split the code by line-breaks to count the number of lines
+		//then for each line, add an empty span inside the column
+		for(var n = 0; n < code.innerHTML.split(/[\n\r]/g).length; n ++)
+		{
+			column.appendChild(document.createElement('span'));
+		}
+
+		//now append the populated column before the code element
+		pre[i].insertBefore(column, code);
+
+		//finally add an identifying class to the PRE to trigger the extra CSS
+		pre[i].className = 'line-numbers';
+	}
+
+})();
+</script>
+</body>
+</html>
