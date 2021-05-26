@@ -116,6 +116,37 @@
 		<p><code>&lt;section&gt;</code> agrupa contenidos relacionados temáticamente.</p>
 		<p>Pueden usarse juntas si se requiere, e.g., si una noticia se incluye en un contenedor <code>&lt;article&gt;</code>, las diferentes partes de la crónica constituirán una sección. Cuando no exista relación entre grupos de contenido, es preferible utilizar <code>&lt;div&gt;</code>.</p>
 
+		<h2 id="navigation-tags">Navegación
+			<a href="#navigation-tags" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code2"><code>&lt;header&gt;</code> agrupa la información introductoria o el panel de navegación, el contenido que se repite al principio de múltiples páginas relacionadas. Se utiliza dentro del <code>body</code>, diferenciándose así de la etiqueta <code>head</code>.</p>
+		<p><code>&lt;nav&gt;</code> incluye los links de navegación principales al contenido de la web. Si los mismos enlaces se repitieran al final, no es necesario agruparlos con esta etiqueta, &lt;footer&gt; sería la más apropiada.</p>
+		<p><code>&lt;footer&gt;</code> contiene los créditos y copyright, junto con otros enlaces de interés, localizados al final de la página.</p>
+		<figure class="code">
+			<figcaption id="caption-code2">Panel de navegación</figcaption>
+			<pre aria-labelledby="caption-code2" aria-describedby="description-code2"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;header&gt;
+	&lt;nav&gt;
+		&lt;a href</b>=<u>"#main-content"</u><b>&gt;</b>Contenido principal<b>&lt;/a&gt;&lt;br&gt;
+		&lt;a href</b>=<u>"#articles-and-sections"</u><b>&gt;</b>Artículos y secciones<b>&lt;/a&gt;&lt;br&gt;
+		&lt;a href</b>=<u>"#navigation-tags"</u><b>&gt;</b>Navegación<b>&lt;/a&gt;
+	&lt;/nav&gt;
+&lt;/header&gt;</b></code></pre>
+		</figure>
+		<!-- Example box -->
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<header>
+					<nav>
+						<a href="#main-content">Contenido principal</a><br>
+						<a href="#articles-and-sections">Artículos y secciones</a><br>
+						<a href="#navigation-tags">Navegación</a>
+					</nav>
+				</header>
+			</div>
+		</figure>
 	</div><!-- #theory -->
 
 	<!-- Right arrow -->
