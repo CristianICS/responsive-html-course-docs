@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>HTML responsive design docs</title>
+
+	<!-- The edge of the website should follow the edge of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- style -->
+	<link rel="stylesheet" href="estilo/style.css">
+
+	<!-- scripts -->
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+<header>
+
+	<!-- navbar -->
+	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
+		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<!-- The buton with class="toc-icon" is displayed in narrow screens to open and close the TOC -->
+		<button class="button-toc toc-icon" onclick="tocFunction_responsive()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<span id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></span>
+		<!-- GitHub logo -->
+		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
+			<img src="img/github-logo.svg" alt="">
+		</a>
+	</nav>
+
+</header>
+
+<!-- Table Of Contents -->
+<div id="table-of-contents" class="TOC">
+	<p class="title">HTML5</p>
+	<a href="introduccion.html" class="subtitle">Introducción</a>
+	<a href="elementos-basicos.html" class="subtitle">Elementos básicos</a>
+	<a href="formato.html" class="subtitle">Formato</a>
+	<a href="encabezados.html" class="subtitle">Encabezados</a>
+	<a href="parrafos.html" class="subtitle">Párrafos</a>
+	<a href="imagenes.html" class="subtitle">Imágenes</a>
+	<a href="enlaces.html" class="subtitle">Enlaces</a>
+	<a class="subtitle active">Listas</a>
+	<a href="formularios.html" class="subtitle">Formularios</a>
+	<a href="etiquetas-responsive.html" class="subtitle">Etiquetas <i>Responsive</i></a>
+	<a href="audio.html" class="subtitle">Audio</a>
+	<a href="mejorar-accesibilidad.html" class="subtitle">Mejorar la accesibilidad</a>
+</div>
+
+<!-- Layaout for the theory -->
+<div id="canvas">
+
+	<!-- Left arrow -->
+	<div class="to-left-page" id="left-arrow">
+		<a href="enlaces.html"><i class="left arrow"></i></a>
+	</div>
+
+	<!-- Theory Block -->
+	<div id="theory">
+		<h1>Listas</h1>
+		<p>Permiten agrupar un grupo de elementos de diferentes formas.</p>
+		<figure class="example-box">
+			<figcaption>Ejemplo</figcaption>
+			<div class="flex jc-sa">
+				<div>
+					<p>Lista sin ordenar</p>
+					<ul>
+						<li>Primer elemento</li>
+						<li>Segundo elemento</li>
+						<li>Tercer elemento</li>
+					</ul>
+				</div>
+				<div>
+					<p>Lista ordenada</p>
+					<ol>
+						<li>Primer elemento</li>
+						<li>Segundo elemento</li>
+						<li>Tercer elemento</li>
+					</ol>
+				</div>
+			</div>
+		</figure>
+
+		<h2 id="unordered-list">Listas sin ordenar
+			<a href="#unordered-list" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code1">Comienzan con la etiqueta <code>&lt;ul&gt;</code>. Cada item empezará con la etiqueta <code>&lt;li&gt;</code>.</p>
+		<p>Los elementos irán precedidos por un pequeño círculo.</p>
+		<figure class="code">
+			<figcaption id="caption-code1">Lista con elementos sin ordenar</figcaption>
+			<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;ul&gt;</b>
+	<b>&lt;li&gt;</b>milk<b>&lt;/li&gt;</b>
+	<b>&lt;li&gt;</b>cheese<b>&lt;/li&gt;</b>
+<b>&lt;/ul&gt;</b></code></pre>
+		</figure>
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<ul>
+					<li>milk</li>
+					<li>cheese</li>
+				</ul>
+			</div>
+		</figure>
+
+		<h2 id="ordered-list">Listas ordenadas
+			<a href="#ordered-list" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code2">Comienzan con la etiqueta <code>&lt;ol&gt;</code>. Cada item empezará con la etiqueta <code>&lt;li&gt;</code>.</p>
+		<p>Los elementos irán precedidos por números comenzando por el uno. No es posible continuar automáticamente la numeración en varias listas ordenadas separadas ni ocultar la numeración de algunos items. Si es posible <b>modificar el número de un elemento</b> modificando su atributo <code>value</code>. La numeración continúa a partir de este nuevo valor.</p>
+		<figure class="code">
+			<figcaption id="caption-code2">Lista con elementos ordenados</figcaption>
+			<pre aria-labelledby="caption-code2" aria-describedby="description-code2"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;ol&gt;</b>
+	<b>&lt;li&gt;</b>Low Bar Squats<b>&lt;/li&gt;</b>
+	<b>&lt;li&gt;</b>Front Squats<b>&lt;/li&gt;</b>
+	<b>&lt;li value</b>=<u>"5"</u><b>&gt;</b>Hip Thrust<b>&lt;/li&gt;</b>
+	<b>&lt;li&gt;</b>Dragon Flags<b>&lt;/li&gt;</b>
+<b>&lt;/ol&gt;</b></code></pre>
+		</figure>
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<ol>
+					<li>Low Bar Squats</li>
+					<li>Front Squats</li>
+					<li value="5">Hip Thrust</li>
+					<li>Dragon Flags</li>
+				</ol>
+			</div>
+		</figure>
+
+		<h2 id="definition-list">Listas de definiciones
+			<a href="#definition-list" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p>Una lista de definiciones se compone de términos y sus acepciones</p>
+		<p id="description-code3">Comienzan con la etiqueta <code>&lt;dl&gt;</code>. Los términos o nombres se engloban dentro de la etiqueta <code>&lt;dt&gt;</code> y sus definiciones dentro de <code>&lt;dd&gt;</code></p>
+		<figure class="code">
+			<figcaption id="caption-code3">Lista de definiciones</figcaption>
+			<pre aria-labelledby="caption-code3" aria-describedby="description-code3"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;dl&gt;
+	&lt;dt&gt;</b>Hacker<b>&lt;/dt&gt;
+	&lt;dd&gt;</b>- a clever programmer<b>&lt;/dd&gt;
+	&lt;dt&gt;</b>Nerd<b>&lt;/dt&gt;
+	&lt;dd&gt;</b>- technically bright but socially inept person<b>&lt;/dd&gt;
+&lt;/dl&gt;</b></code></pre>
+		</figure>
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<dl>
+				<dt>Hacker</dt>
+				<dd>- a clever programmer</dd>
+				<dt>Nerd</dt>
+				<dd>- technically bright but socially inept person</dd>
+			</dl>
+			</div>
+		</figure>
+
+		<h2 id="nested-list">Listas anidadas
+			<a href="#nested-list" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code4">Pueden encadenarse listas incluyendo una nueva etiqueta <code>ul</code> u <code>ol</code> dentro de un elemento <code>&lt;li&gt;</code> anterior, cerrándo esta nueva lista justo antes del cierre de <code>&lt;/li&gt;</code>.</p>
+		<figure class="code">
+			<figcaption id="caption-code4">Varias listas anidadas</figcaption>
+			<pre aria-labelledby="caption-code4" aria-describedby="description-code4"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;ul&gt;
+	&lt;li&gt;</b>La gente corre tanto
+		<b>&lt;ul&gt;
+			&lt;li&gt;</b>porque no sabe dónde va<b>&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;</b>el que sabe dónde va,
+		<b>&lt;ol&gt;
+			&lt;li&gt;</b>va despacio<b>&lt;/li&gt;
+			&lt;li&gt;</b>para paladear<b>&lt;/li&gt;
+			&lt;li&gt;</b>el <b>&lt;i&gt;</b>ir llegando<b>&lt;/i&gt;&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</b></code></pre>
+		</figure>
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<ul>
+					<li>La gente corre tanto
+						<ul>
+							<li>porque no sabe dónde va</li>
+						</ul>
+					</li>
+					<li>el que sabe dónde va,
+						<ol>
+							<li>va despacio</li>
+							<li>para paladear</li>
+							<li>el <i>ir llegando</i></li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</figure>
+		<h2 id="html-list-further-reading">Lecturas complementarias
+			<a href="#st-further-reading" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<ul>
+			<li><a href="http://www.w3.org/TR/html401/struct/lists.html#h-10.2" target="_blank">W3C Superseded Recommendation</a></li>
+			<li><a href="https://www.w3.org/wiki/HTML_lists" target="_blank">HTML Lists Wiki</a></li>
+			<li><a href="https://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list" target="_blank">StackOverflow nested lists post</a></li>
+		</ul>
+
+	</div><!-- #theory -->
+
+	<!-- Right arrow -->
+	<div class="to-right-page">
+		<a href="formularios.html"><i class="right arrow"></i></a>
+	</div>
+
+	<!-- Two more arrows to display in small screens at the end of the theory -->
+	<div id="arrows-responsive" class="jc-sa">
+		<a href="enlaces.html"><i class="left arrow"></i></a>
+		<a href="formularios.html"><i class="right arrow"></i></a>
+	</div>
+
+</div><!-- #canvas -->
+
+<!-- Transform pre elements into code chunks -->
+<script>
+(function()
+	{
+	//filter IE8 and earlier which don't support the generated content
+	if(typeof(window.getComputedStyle) == 'undefined') 
+	{ 
+	return; 
+	}
+
+	//get the collection of class "code-chunk" elements
+	var pre = document.getElementsByTagName('pre');
+
+	//now iterate through the collection
+	for(var len = pre.length, i = 0; i < len; i ++)
+	{
+		//get the CODE or SAMP element inside it, 
+		//or just in case there isn't one, continue to the next PRE
+		var code = pre[i].getElementsByTagName('code').item(0);
+		if(!code)
+		{
+			code = pre[i].getElementsByTagName('samp').item(0);
+			if(!code)
+			{
+				continue;
+			}
+		}
+
+		//create a containing DIV column (but don't append it yet)
+		//including aria-hidden so that ATs don't read the numbers
+		var column = document.createElement('div');
+		column.setAttribute('aria-hidden', 'true');
+
+		//split the code by line-breaks to count the number of lines
+		//then for each line, add an empty span inside the column
+		for(var n = 0; n < code.innerHTML.split(/[\n\r]/g).length; n ++)
+		{
+			column.appendChild(document.createElement('span'));
+		}
+
+		//now append the populated column before the code element
+		pre[i].insertBefore(column, code);
+
+		//finally add an identifying class to the PRE to trigger the extra CSS
+		pre[i].className = 'line-numbers';
+	}
+
+})();
+</script>
+</body>
+</html>

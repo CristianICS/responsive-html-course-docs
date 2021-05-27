@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>HTML responsive design docs</title>
+
+	<!-- The edge of the website should follow the edge of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- style -->
+	<link rel="stylesheet" href="estilo/style.css">
+
+	<!-- scripts -->
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+<header>
+
+	<!-- navbar -->
+	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
+		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<!-- The buton with class="toc-icon" is displayed in narrow screens to open and close the TOC -->
+		<button class="button-toc toc-icon" onclick="tocFunction_responsive()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<span id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></span>
+		<!-- GitHub logo -->
+		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
+			<img src="img/github-logo.svg" alt="">
+		</a>
+	</nav>
+
+</header>
+
+<!-- Table Of Contents -->
+<div id="table-of-contents" class="TOC">
+	<p class="title">HTML5</p>
+	<a href="introduccion.html" class="subtitle">Introducción</a>
+	<a href="elementos-basicos.html" class="subtitle">Elementos básicos</a>
+	<a href="formato.html" class="subtitle">Formato</a>
+	<a href="encabezados.html" class="subtitle">Encabezados</a>
+	<a href="parrafos.html" class="subtitle">Párrafos</a>
+	<a class="subtitle active">Imágenes</a>
+	<a href="enlaces.html" class="subtitle">Enlaces</a>
+	<a href="listas.html" class="subtitle">Listas</a>
+	<a href="formularios.html" class="subtitle">Formularios</a>
+	<a href="etiquetas-responsive.html" class="subtitle">Etiquetas <i>Responsive</i></a>
+	<a href="audio.html" class="subtitle">Audio</a>
+	<a href="mejorar-accesibilidad.html" class="subtitle">Mejorar la accesibilidad</a>
+</div>
+
+<!-- Layaout for the theory -->
+<div id="canvas">
+
+	<!-- Left arrow -->
+	<div class="to-left-page" id="left-arrow">
+		<a href="parrafos.html"><i class="left arrow"></i></a>
+	</div>
+
+	<!-- Theory Block -->
+	<div id="theory">
+		<h1>Imágenes</h1>
+		<p>Se colocan mediante la etiqueta <code>&lt;img&gt;</code>, <abbr title="no necesita etiqueta de cierre">etiqueta vacía</abbr>.</p>
+		<p>Es obligatorio incluir el atributo <code>"alt"</code>, incluso en las imágenes con pie de figura, pues es utilizado por los lectores de pantalla para describir las imágenes a personas con discapacidad. Si es solo decorativa, la imagen debe incluir el atributo vacío <code>&lt;img alt=""&gt;</code>.</p>
+		<p>La ubicación de la imagen se escribe dentro del atributo <code>src</code>. Puede referirse a la dirección web o ser la dirección donde se localiza el archivo en local (e.g. <code>src="imgs/image-example.jpg"</code>).</p>
+		<div class="accesibility">
+			<span>Accesibilidad</span>
+			<p>Toda imagen debe incluir las propiedades <code>width</code> y <code>height</code>, controlando sus dimensiones.</p>
+			<p>Pueden escribirse dentro de la etiqueta (1) o incluirse dentro de los estilos CSS.</p> <!-- Poner la referencia a la sección CSS de imágenes -->
+			<ol>
+				<li><code>&lt;img src="img/link.svg" style="width:40px;height:auto;" alt=""&gt;</code>
+			</ol>
+		</div>
+
+		<h2 id="figure-environment">Figure
+			<a href="#figure-environment" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p>Es conveniente integrar las imágenes en el entorno <code>&lt;figure&gt;&lt;/figure&gt;</code> junto a su pie de figura <code>&lt;figcaption&gt;</code>.</p>
+		<p id="description-code1">Las imágenes pueden ir en solitario cuando se traten de logotipos (etiqueta <code>svg</code> recomendable) o cualquier otro tipo de representación que no sea una imagen normal, diagrama o gráfico. En los gráficos, el pie de figura puede usarse como nota informativa de su contenido.</p>
+		<figure class="code">
+			<figcaption id="caption-code1">Imagen dentro del contenedor figure</figcaption>
+			<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;figure&gt;</b>
+  <b>&lt;img src</b>=<u>"https://www.r.com/rStudio.jpg"</u> <b>alt</b>=<u>"RStudio interface"</u><b>&gt;</b>
+  <b>&lt;figcaption&gt;</b>
+    RStudio releases its new interface.
+  <b>&lt;/figcaption&gt;</b>
+<b>&lt;/figure&gt;</b></code></pre>
+		</figure>
+
+		<h2 id="display-google-drive-image">Mostrar imágenes almacenadas en Google Drive
+			<a href="#display-google-drive-image" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p>En el caso de querer incorporar una imagen almacenada en Google Drive, deben realizarse los siguientes pasos:</p>
+		<ol>
+			<li>Hacerla pública: botón derecho sobre la imagen <code>-></code> pulsar <i>obtener enlace</i> <code>-></code> modificar estado a <i>cualquier persona con el enlace</i></li>
+			<li>Copiar el <b class="highlight1">ID</b> de la imagen
+				<ul>
+					<li><p class="html-break">Id en la dirección original:<br><code>https://drive.google.com/file/d/<b class="highlight1">1468mynVJv85CLoTomuwBoMROCINtFZZj</b>/view?usp=sharing</code></p></li>
+				</ul>
+			</li>
+			<li>Pegarlo en la siguiente <b>direccíon modificada</b>:
+				<ul>
+					<li><p>Dirección modificada:<br><code>https://drive.google.com/uc?export=view&id=<b class="highlight1">ID</b></code></p></li>
+					<li><p class="html-break">Id en la <b>dirección modificada</b>:<br><code>https://drive.google.com/uc?export=view&id=<b class="highlight1">1468mynVJv85CLoTomuwBoMROCINtFZZj</b></code></p></li>
+				</ul>
+			</li>
+		</ol>
+		<p id="description-code2">La <b class="highlight1">dirección modificada</b> se debe pegar dentro del atributo <code>src</code>:</p>
+		<figure class="code">
+			<figcaption id="caption-code2">Mostrar imagen almacenada en la nube personal de <abbr title="Google Drive">GD</abbr></figcaption>
+			<pre aria-labelledby="caption-code2" aria-describedby="description-code2"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;div&gt;</b>
+	<b>&lt;img 
+		style</b>=<u>"width:20%; height:auto; max-width:20%;"</u>
+		<b>alt</b>=<u>"alondra de dupont"</u>
+		<b>src</b>=<u>"https://drive.google.com/uc?export=view&amp;id=1Vm2qUhoJ_UazT0g7S_in-Zv6CvQNz4Jh"</u>
+	<b>&gt;</b>
+<b>&lt;/div&gt;</b></code></pre>
+		</figure>
+
+		<!-- Example box -->
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<div>
+					<img style="width:20%;height:auto;max-width:20%;"
+					alt="alondra de dupont"
+					src="https://drive.google.com/uc?export=view&id=1Vm2qUhoJ_UazT0g7S_in-Zv6CvQNz4Jh">
+				</div>
+			</div>
+		</figure>
+
+		<h2 id="float-image">Imagen flotante
+			<a href="#float-image" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code3">Mediante la propiedad CSS <code>float</code> puede establecerse el comportamiento de una imagen dentro de un párrafo con texto.</p>
+		<figure class="code">
+			<figcaption id="caption-code3">Imagen flotante</figcaption>
+			<pre aria-labelledby="caption-code3" aria-describedby="description-code3"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;p&gt;&lt;strong&gt;</b>Float the image to the right:<b>&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;img src</b>=<u>"img/github-logo.svg"</u> <b>alt</b>=<u>"github logo"</u> <b>style</b>=<u>"float:right;width:42px;height:42px;"</u><b>&gt;</b>
+	A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+<b>&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;</b>Float the image to the left:<b>&lt;/strong&gt;&lt;/p&gt;
+	&lt;p&gt;
+	&lt;img src</b>=<u>"img/github-logo.svg"</u> <b>alt</b>=<u>"github logo"</u> <b>style</b>=<u>"float:left;width:42px;height:42px;"</u>&gt;
+	A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.  
+<b>&lt;/p&gt;</b></code></pre>
+		</figure>
+
+		<!-- Example box -->
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<p><strong>Float the image to the right:</strong></p>
+				<p>
+				<img src="img/github-logo.svg" alt="github logo" style="float:right;width:42px;height:42px;">
+				A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+				</p>
+
+				<p><strong>Float the image to the left:</strong></p>
+				<p>
+				<img src="img/github-logo.svg" alt="github logo" style="float:left;width:42px;height:42px;">
+				A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+				</p>
+			</div>
+		</figure>
+
+		<h2 id="further-reading">Lecturas complementarias
+			<a href="#further-reading" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<ul>
+			<li><a href="https://www.w3.org/WAI/tutorials/images/" target="_blank">Guidance on providing text alternatives for images</a></li>
+		</ul>
+
+	</div><!-- #theory -->
+
+	<!-- Right arrow -->
+	<div class="to-right-page">
+		<a href="enlaces.html"><i class="right arrow"></i></a>
+	</div>
+
+	<!-- Two more arrows to display in small screens at the end of the theory -->
+	<div id="arrows-responsive" class="jc-sa">
+		<a href="parrafos.html"><i class="left arrow"></i></a>
+		<a href="enlaces.html"><i class="right arrow"></i></a>
+	</div>
+
+</div><!-- #canvas -->
+
+<!-- Transform pre elements into code chunks -->
+<script>
+(function()
+	{
+	//filter IE8 and earlier which don't support the generated content
+	if(typeof(window.getComputedStyle) == 'undefined') 
+	{ 
+	return; 
+	}
+
+	//get the collection of class "code-chunk" elements
+	var pre = document.getElementsByTagName('pre');
+
+	//now iterate through the collection
+	for(var len = pre.length, i = 0; i < len; i ++)
+	{
+		//get the CODE or SAMP element inside it, 
+		//or just in case there isn't one, continue to the next PRE
+		var code = pre[i].getElementsByTagName('code').item(0);
+		if(!code)
+		{
+			code = pre[i].getElementsByTagName('samp').item(0);
+			if(!code)
+			{
+				continue;
+			}
+		}
+
+		//create a containing DIV column (but don't append it yet)
+		//including aria-hidden so that ATs don't read the numbers
+		var column = document.createElement('div');
+		column.setAttribute('aria-hidden', 'true');
+
+		//split the code by line-breaks to count the number of lines
+		//then for each line, add an empty span inside the column
+		for(var n = 0; n < code.innerHTML.split(/[\n\r]/g).length; n ++)
+		{
+			column.appendChild(document.createElement('span'));
+		}
+
+		//now append the populated column before the code element
+		pre[i].insertBefore(column, code);
+
+		//finally add an identifying class to the PRE to trigger the extra CSS
+		pre[i].className = 'line-numbers';
+	}
+
+})();
+</script>
+</body>
+</html>

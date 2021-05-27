@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>HTML responsive design docs</title>
+
+	<!-- The edge of the website should follow the edge of the device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- style -->
+	<link rel="stylesheet" href="estilo/style.css">
+
+	<!-- scripts -->
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+<header>
+
+	<!-- navbar -->
+	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
+		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<!-- The buton with class="toc-icon" is displayed in narrow screens to open and close the TOC -->
+		<button class="button-toc toc-icon" onclick="tocFunction_responsive()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<span id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></span>
+		<!-- GitHub logo -->
+		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
+			<img src="img/github-logo.svg" alt="">
+		</a>
+	</nav>
+
+</header>
+
+<!-- Table Of Contents -->
+<div id="table-of-contents" class="TOC">
+	<p class="title">HTML5</p>
+	<a href="introduccion.html" class="subtitle">Introducción</a>
+	<a href="elementos-basicos.html" class="subtitle">Elementos básicos</a>
+	<a href="formato.html" class="subtitle">Formato</a>
+	<a href="encabezados.html" class="subtitle">Encabezados</a>
+	<a href="parrafos.html" class="subtitle">Párrafos</a>
+	<a href="imagenes.html" class="subtitle">Imágenes</a>
+	<a class="subtitle active">Enlaces</a>
+	<a href="listas.html" class="subtitle">Listas</a>
+	<a href="formularios.html" class="subtitle">Formularios</a>
+	<a href="etiquetas-responsive.html" class="subtitle">Etiquetas <i>Responsive</i></a>
+	<a href="audio.html" class="subtitle">Audio</a>
+	<a href="mejorar-accesibilidad.html" class="subtitle">Mejorar la accesibilidad</a>
+</div>
+
+<!-- Layaout for the theory -->
+<div id="canvas">
+
+	<!-- Left arrow -->
+	<div class="to-left-page" id="left-arrow">
+		<a href="imagenes.html"><i class="left arrow"></i></a>
+	</div>
+
+	<!-- Theory Block -->
+	<div id="theory">
+		<h1>Enlaces</h1>
+		<p>Se escriben entre etiquetas <code>&lt;a&gt;&lt;/a&gt;</code>. Sus atributos son:</p>
+		<ul>
+			<li><code>href</code> Integra la dirección a la que remite el enlace</li>
+			<li><code>target</code> Especifica donde debe abrirse la dirección del enlace. Por defecto se muestra en la misma pestaña del navegador. Este comportamiento puede modificarse con el atributo <code>target</code>, añadiendo uno de los siguientes valores:
+				<ul>
+					<li><code>"_self"</code> Valor por defecto. Abre el documento en la misma ventana en la que es activada.</li>
+					<li id="description-code1"><code>"_blank"</code> Abre el enlace en una pesataña nueva.</li>
+					<li><code>"_parent"</code> Abre el documento en el <i>parent frame</i>.</li>
+					<li><code>"_top"</code> Abre el enlace en la totalidad de la ventana.</li>
+				</ul>
+			</li>
+		</ul>
+		<figure class="code">
+			<figcaption id="caption-code1">Enlace abierto en una nueva ventana</figcaption>
+			<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;a href</b>=<u>"https://www.w3schools.com/"</u> <b>target</b>=<u>"_blank"</u><b>&gt;</b>Visit W3Schools!<b>&lt;/a&gt;</b></code></pre>
+		</figure>
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+			</div>
+		</figure>
+
+		<!-- Responsive Box -->
+		<div class="accesibility">
+			<span>Accesibilidad</span>
+			<p>El texto al que engloban las etiquetas del enlace debe describir o indicar el contenido del mismo, i.e.,</p>
+			<ul>
+				<li>
+					<p><code>&lt;a href="wikipedia.com" target="_blank"&gt;Wikipedia entry&lt;/a&gt;</code></p>
+				</li>
+			</ul>
+			<p>Los usuarios con lectores de pantalla tienen diferentes opciones para mostrar el contenido de la web, entre las que se incluye la opción de escuchar los enlaces de la página. Se lee el texto dentro de las etiquetas, siendo de poca utilidad listas llenas de enlaces "click here" o "read more".</p>
+		</div>
+
+		<h2 id="link-url-types">Tipos de enlaces
+			<a href="#link-url-types" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p>Los enlaces pueden hacer referencia tanto a contenido externo (otras webs o documentos) como a contenido interno (dentro del mismo documento HTML).</p>
+		<ul>
+			<li><b>Enlaces internos</b> el atributo <code>href</code> comienza con una almohadilla <code>#</code> seguida del <code>id</code> que describe el elemento a enlazar.</li>
+		</ul>
+		<p><code>&lt;div id="contacts"&gt;...&lt;/div&gt;</code></p>
+		<p><code>&lt;a href="#contacts"&gt;Contacts&lt;/a&gt;</code></p>
+		<ul>
+			<li><b>Enlaces externos</b>
+				<ul>
+					<li>Dirección web: <code>&lt;a href="https://freecodecamp.org"&gt;fcc home page&lt;/a&gt;</code></li>
+					<li>Dirección de archivo: <code>&lt;a href="/section/main.html"&gt;good article&lt;/a&gt;</code></li>
+					<li>Dirección de correo: <code>&lt;a href="mailto:someone@example.com"&gt;Send email&lt;/a&gt;</code></li>
+				</ul>
+			</li>
+			<li><b>Enlace nulo</b> <code>href="#"</code></li>
+		</ul>
+
+		<h2 id="link-html-object">Convertir un elemento HTML en enlace
+			<a href="#link-html-object" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p>Los enlaces pueden integrar otros elementos, e.g. imágenes, para que al pulsarlos remita a la dirección del enlace.</p>
+		<p id="description-code2">Para utilizar una imagen como enlace, colocar la etiqueta <code>&lt;img&gt;</code> dentro de las etiquetas <code>&lt;a&gt;&lt;/a&gt;</code>.</p>
+		<figure class="code">
+			<figcaption id="caption-code2">Convertir una imagen en enlace</figcaption>
+			<pre aria-labelledby="caption-code2" aria-describedby="description-code2"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;a href</b>=<u>"#link-html-object"</u> <b>class</b>=<u>"anchor-link"</u><b>&gt;</b>
+	<b>&lt;img src</b>=<u>"img/link.svg"</u> <b>alt</b>=<u>""</u><b>&gt;</b>
+<b>&lt;/a&gt;</b></code></pre>
+		</figure>
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<a href="#link-html-object" class="anchor-link">
+					<img src="img/link.svg" alt="">
+				</a>
+			</div>
+		</figure>
+		<div class="warning">
+			<span>Advertencia</span>
+			<p>Al contrario que el ejemplo anterior, un ítem de una lista (<code>&lt;li&gt;</code>) se transforma en enlace <b>englobando solamente el texto en su interior</b>:</p>
+			<p><code>&lt;li&gt;Here is &lt;a href="#"&gt;a random link&lt;/a&gt;&lt;/li&gt;<code></p>
+		</div>
+
+		<h2 id="link-html-button">Convertir un botón en enlace
+			<a href="#link-html-button" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code3">Para utilizar un botón como link debe añadirse un fragmento de código <code>JavaScript</code> dentro de la etiqueta <code>button</code>.</p>
+		<figure class="code">
+			<figcaption id="caption-code3">Convertir un botón en enlace</figcaption>
+			<pre aria-labelledby="caption-code3" aria-describedby="description-code3"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;button</b> <i>onclick</i>=<u>"document.location='enlaces.html'"</u><b>&gt;</b>Enlaces<b>&lt;/button&gt;</b></code></pre>
+		</figure>
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<button onclick="document.location='enlaces.html'">Enlaces</button>
+			</div>
+		</figure>
+
+		<h2 id="link-title">Title
+			<a href="#link-title" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p id="description-code4">El atributo <code>title</code> puede añadirse a los enlaces para añadir información extra. La información se muestra en un pequeño recuadro cuando se sitúa el cursor sobre el enlace.</p>
+		<figure class="code">
+			<figcaption id="caption-code4">Añadir información adicional sobre el enlace</figcaption>
+			<pre aria-labelledby="caption-code4" aria-describedby="description-code4"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;a href</b>=<u>"https://www.w3schools.com/html/"</u> <b>title</b>=<u>"Go to W3Schools HTML section"</u><b>&gt;</b>Visit our HTML Tutorial<b>&lt;/a&gt;</b></code></pre>
+		</figure>
+		<figure class="example-box">
+			<figcaption>Resultado</figcaption>
+			<div>
+				<a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
+			</div>
+		</figure>
+
+	</div><!-- #theory -->
+
+	<!-- Right arrow -->
+	<div class="to-right-page">
+		<a href="listas.html"><i class="right arrow"></i></a>
+	</div>
+
+	<!-- Two more arrows to display in small screens at the end of the theory -->
+	<div id="arrows-responsive" class="jc-sa">
+		<a href="imagenes.html"><i class="left arrow"></i></a>
+		<a href="listasn.html"><i class="right arrow"></i></a>
+	</div>
+
+</div><!-- #canvas -->
+
+<!-- Transform pre elements into code chunks -->
+<script>
+(function()
+	{
+	//filter IE8 and earlier which don't support the generated content
+	if(typeof(window.getComputedStyle) == 'undefined') 
+	{ 
+	return; 
+	}
+
+	//get the collection of class "code-chunk" elements
+	var pre = document.getElementsByTagName('pre');
+
+	//now iterate through the collection
+	for(var len = pre.length, i = 0; i < len; i ++)
+	{
+		//get the CODE or SAMP element inside it, 
+		//or just in case there isn't one, continue to the next PRE
+		var code = pre[i].getElementsByTagName('code').item(0);
+		if(!code)
+		{
+			code = pre[i].getElementsByTagName('samp').item(0);
+			if(!code)
+			{
+				continue;
+			}
+		}
+
+		//create a containing DIV column (but don't append it yet)
+		//including aria-hidden so that ATs don't read the numbers
+		var column = document.createElement('div');
+		column.setAttribute('aria-hidden', 'true');
+
+		//split the code by line-breaks to count the number of lines
+		//then for each line, add an empty span inside the column
+		for(var n = 0; n < code.innerHTML.split(/[\n\r]/g).length; n ++)
+		{
+			column.appendChild(document.createElement('span'));
+		}
+
+		//now append the populated column before the code element
+		pre[i].insertBefore(column, code);
+
+		//finally add an identifying class to the PRE to trigger the extra CSS
+		pre[i].className = 'line-numbers';
+	}
+
+})();
+</script>
+</body>
+</html>
