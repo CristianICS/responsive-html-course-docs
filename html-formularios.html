@@ -14,32 +14,14 @@
 
 	<!-- scripts -->
 	<script src="script/script.js"></script>
+	<!-- reusable header -->
+	<script src="content/header.js" type="text/javascript" defer></script>
 
 </head>
 <body>
-<header>
-
-	<!-- navbar -->
-	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
-		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<!-- The buton with class="toc-icon" is displayed in narrow screens to open and close the TOC -->
-		<button class="button-toc toc-icon" onclick="tocFunction_responsive()">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<span id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></span>
-		<!-- GitHub logo -->
-		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
-			<img src="img/github-logo.svg" alt="">
-		</a>
-	</nav>
-
-</header>
+<reusable-header>
+	<!-- Code is inside content/header.js -->
+</reusable-header>
 
 <!-- Table Of Contents -->
 <div id="table-of-contents" class="TOC">
@@ -184,7 +166,7 @@
 				<b>&lt;input id</b>=<u>"ind"</u> <b>type</b>=<u>"radio"</u> <b>name</b>=<u>"ind-out"</u><b>&gt;</b>Indoor
 			<b>&lt;/label&gt;&lt;br&gt;</b>
 			<b>&lt;label for</b>=<u>"out"</u><b>&gt;</b>
-				<b>&lt;input id</b>=<u>"out"</u> <b>type</b>=<u>"radio"</u> <b>name</b>=<u>"ind-out"</u><b>&gt;</b>Outdoor 
+				<b>&lt;input id</b>=<u>"out"</u> <b>type</b>=<u>"radio"</u> <b>name</b>=<u>"ind-out"</u><b>&gt;</b>Outdoor
 			<b>&lt;/label&gt;</b>
 		<b>&lt;/fieldset&gt;
 	&lt;/form&gt;</b></code></pre>
@@ -193,13 +175,13 @@
 				<figcaption>Resultado</figcaption>
 				<div>
 					<form>
-						<fieldset> 
+						<fieldset>
 							<legend> Modality </legend>
 							<label for="ind">
-								<input	id="ind" type="radio" name="ind-out">Indoor 
+								<input	id="ind" type="radio" name="ind-out">Indoor
 							</label><br>
-							<label for="out"> 
-								<input id="out" type="radio" name="ind-out">Outdoor 
+							<label for="out">
+								<input id="out" type="radio" name="ind-out">Outdoor
 							</label>
 						</fieldset>
 					</form>
@@ -655,9 +637,9 @@
 (function()
 	{
 	//filter IE8 and earlier which don't support the generated content
-	if(typeof(window.getComputedStyle) == 'undefined') 
-	{ 
-	return; 
+	if(typeof(window.getComputedStyle) == 'undefined')
+	{
+	return;
 	}
 
 	//get the collection of class "code-chunk" elements
@@ -666,7 +648,7 @@
 	//now iterate through the collection
 	for(var len = pre.length, i = 0; i < len; i ++)
 	{
-		//get the CODE or SAMP element inside it, 
+		//get the CODE or SAMP element inside it,
 		//or just in case there isn't one, continue to the next PRE
 		var code = pre[i].getElementsByTagName('code').item(0);
 		if(!code)

@@ -14,33 +14,14 @@
 
 	<!-- scripts -->
 	<script src="script/script.js"></script>
+	<!-- reusable header -->
+	<script src="content/header.js" type="text/javascript" defer></script>
 
 </head>
 <body>
-<header>
-
-	<!-- navbar -->
-	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
-		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<!-- The buton with class="toc-icon" is displayed in narrow screens to open and close the TOC -->
-		<button class="button-toc toc-icon" onclick="tocFunction_responsive()">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<span id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></span>
-		<!-- GitHub logo -->
-		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
-			<img src="img/github-logo.svg" alt="">
-		</a>
-	</nav>
-
-</header>
-
+<reusable-header>
+	<!-- Code is inside content/header.js -->
+</reusable-header>
 <!-- Table Of Contents -->
 <div id="table-of-contents" class="TOC">
 	<p class="title">HTML5</p>

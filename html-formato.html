@@ -14,32 +14,14 @@
 
 	<!-- scripts -->
 	<script src="script/script.js"></script>
+	<!-- reusable header -->
+	<script src="content/header.js" type="text/javascript" defer></script>
 
 </head>
 <body>
-<header>
-
-	<!-- navbar -->
-	<nav id="navbar-menu" class="navbar flex jc-sb ai-c">
-		<button id="openTOCbutton" class="button-toc" onclick="TOC_function()">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<!-- The buton with class="toc-icon" is displayed in narrow screens to open and close the TOC -->
-		<button class="button-toc toc-icon" onclick="tocFunction_responsive()">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-		<span id="main-title"><a href="index.html">Responsive Web Design <span class="highlight1">docs</span></a></span>
-		<!-- GitHub logo -->
-		<a id="github-logo" href="https://github.com/CristianICS" target="_blank">
-			<img src="img/github-logo.svg" alt="">
-		</a>
-	</nav>
-
-</header>
+<reusable-header>
+	<!-- Code is inside content/header.js -->
+</reusable-header>
 
 <!-- Table Of Contents -->
 <div id="table-of-contents" class="TOC">
@@ -137,7 +119,7 @@ and the home of the Japanese Imperial Family.<b>&lt;/p&gt;</b>
 	<b>&lt;/style&gt;</b>
 	<b>&lt;script&gt;</b>
 	<i>function</i> <u>show_alert</u>() {
-		
+
 	}
 	<b>&lt;/script&gt;</b>
 <b>&lt;/head&gt;</b>
@@ -203,9 +185,9 @@ and the home of the Japanese Imperial Family.<b>&lt;/p&gt;</b>
 (function()
 	{
 	//filter IE8 and earlier which don't support the generated content
-	if(typeof(window.getComputedStyle) == 'undefined') 
-	{ 
-	return; 
+	if(typeof(window.getComputedStyle) == 'undefined')
+	{
+	return;
 	}
 
 	//get the collection of class "code-chunk" elements
@@ -214,7 +196,7 @@ and the home of the Japanese Imperial Family.<b>&lt;/p&gt;</b>
 	//now iterate through the collection
 	for(var len = pre.length, i = 0; i < len; i ++)
 	{
-		//get the CODE or SAMP element inside it, 
+		//get the CODE or SAMP element inside it,
 		//or just in case there isn't one, continue to the next PRE
 		var code = pre[i].getElementsByTagName('code').item(0);
 		if(!code)
