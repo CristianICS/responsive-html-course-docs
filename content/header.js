@@ -1,3 +1,16 @@
+// IMPORTANT: The style of the web has to be a global key to make 0
+// the margin and padding of all web's elements
+
+// WHY?: Because the new html code to insert it's been display inside
+// another div container
+
+/** Example: remove additional spaces between elements
+ * html {
+ * 	margin:0;
+ * 	padding:0;
+ * }
+*/
+
 class Header extends HTMLElement {
   constructor() {
     super();
