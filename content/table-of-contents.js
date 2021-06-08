@@ -64,3 +64,61 @@ TOC += '</div>';
 
 // Display TOC in the div container with id "reusable-TOC"
 document.getElementById("reusable-TOC").innerHTML = TOC;
+
+// Display direction arrows
+var leftPage;
+var rightPage;
+var responsiveArrows;
+var title = document.body.getElementsByTagName("h1")[0].innerHTML;
+
+
+var returnSection = function(title, sections){
+    return sections.indexOf(title)
+}
+
+var index = returnSection(title, sections_names);
+
+
+// THE SCRIPT WILL RUN ONLY IN THE PAGE TO DISPLAY
+if(index==0){
+    // display arrow to index page
+    rightPage = '<a href="' + sections_url[index+1] + '"><i class="right arrow"></i></a>';
+    responsiveArrows = leftPage;
+    responsiveArrows += rightPage;
+    // Display right direction arrow
+    document.getElementById("left-arrow").innerHTML = '<a href="index.html"><i class="left arrow"></i></a>';
+
+    // Display right direction arrow
+    document.getElementById("right-arrow").innerHTML = rightPage;
+
+    // Display responsive arrows
+    document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
+}
+if(index==number_of_sections) {
+    leftPage = '<a href="' + sections_url[index-1] + '"><i class="left arrow"></i></a>';
+    responsiveArrows = leftPage;
+        // Display right direction arrow
+        document.getElementById("left-arrow").innerHTML = leftPage;
+
+        // Display right direction arrow
+        document.getElementById("right-arrow").innerHTML = rightPage;
+
+        // Display responsive arrows
+        document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
+} else {
+    leftPage = '<a href="' + sections_url[index-1] + '"><i class="left arrow"></i></a>';
+    rightPage = '<a href="' + sections_url[index+1] + '"><i class="right arrow"></i></a>';
+    responsiveArrows = leftPage;
+    responsiveArrows += rightPage;
+        // Display right direction arrow
+        document.getElementById("left-arrow").innerHTML = leftPage;
+
+        // Display right direction arrow
+        document.getElementById("right-arrow").innerHTML = rightPage;
+
+        // Display responsive arrows
+        document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
+}
+
+
+
