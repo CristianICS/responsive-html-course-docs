@@ -67,7 +67,7 @@ TOC += '</div>';
 // Display TOC in the div container with id "reusable-TOC"
 document.getElementById("reusable-TOC").innerHTML = TOC;
 
-// Display direction arrows
+// Display direction arrows | each in its div container
 var leftPage;
 var rightPage;
 var responsiveArrows;
@@ -99,8 +99,7 @@ if(index==0){
 
     // Display responsive arrows
     document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
-}
-if(index==number_of_sections) {
+} else if (index==number_of_sections) {
     // display only left arrow, because it's the last section
     leftPage = '<a href="' + sections_url[index-1] + '"><i class="left arrow"></i></a>';
     responsiveArrows = leftPage;
