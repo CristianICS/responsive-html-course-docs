@@ -1,4 +1,4 @@
-// IMPORTANT: The style of the web has to be a global key to make 0
+// IMPORTANT: With this method the style of the web has to be a global key to make 0
 // the margin and padding of all web's elements
 
 // WHY?: Because the new html code to insert it's been display inside
@@ -44,12 +44,3 @@ class Header extends HTMLElement {
 }
 
   customElements.define('reusable-header', Header);
-
-/*
- * Another method (more 'easier') is able to do the same as code above
-*/
-// 1 HTML document:
-//<header id="switch-header"></header>
-
-// 2 JavaScript code
-// document.getElementById("switch-header").innerHTML = "original HTML code";

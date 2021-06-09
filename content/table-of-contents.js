@@ -1,15 +1,14 @@
-// IMPORTANT: The style of the web has to be a global key to make 0
-// the margin and padding of all web's elements
-
-// WHY?: Because the new html code to insert it's been display inside
-// another div container
-
-/** Example: remove additional spaces between elements
- * html {
- * 	margin:0;
- * 	padding:0;
- * }
+/*
+ * Another method to reusable code (more 'easier')
+ * It's able to do the same as code in header.js, but
+ * without the need for creating aditional div
 */
+
+// 1 HTML document with the div that originally would content the element:
+//<div id="table-of-contents" class="TOC"></div>
+
+// 2 JavaScript code
+// document.getElementById("table-of-contents").innerHTML = "original HTML code";
 
 // WARNING: THE SCRIPT WILL RUN ONLY IN THE PAGE TO DISPLAY
 // so only get the elements of one section
@@ -48,10 +47,13 @@ var sections_url = [
 
 var number_of_sections = sections_url.length;
 
-// Save Table of Contents code
-var TOC = '<div id="table-of-contents" class="TOC">';
-// add new line
-TOC += '<p class="title">HTML5</p>';
+// Variable to save Table of Contents
+var TOC;
+
+// add new line with the title
+TOC = '<p class="title">HTML5</p>';
+
+// add all the sections
 for (i = 0; i < number_of_sections; i++) {
     // when title of the theory block matchs with the TOC's section, add active class
     if(document.body.getElementsByTagName("h1")[0].innerHTML==sections_names[i]) {
@@ -61,11 +63,8 @@ for (i = 0; i < number_of_sections; i++) {
     }
 }
 
-// add close tag
-TOC += '</div>';
-
 // Display TOC in the div container with id "reusable-TOC"
-document.getElementById("reusable-TOC").innerHTML = TOC;
+document.getElementById("table-of-contents").innerHTML = TOC;
 
 // Display direction arrows | each in its div container
 var leftPage;
