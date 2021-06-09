@@ -11,6 +11,8 @@
  * }
 */
 
+// WARNING: THE SCRIPT WILL RUN ONLY IN THE PAGE TO DISPLAY
+// so only get the elements of one section
 
 // Array with all course sections
 var sections_names = [
@@ -69,22 +71,26 @@ document.getElementById("reusable-TOC").innerHTML = TOC;
 var leftPage;
 var rightPage;
 var responsiveArrows;
+// Get section's title
 var title = document.body.getElementsByTagName("h1")[0].innerHTML;
 
-
+// return the index which contains section's title
 var returnSection = function(title, sections){
     return sections.indexOf(title)
 }
 
 var index = returnSection(title, sections_names);
 
-
-// THE SCRIPT WILL RUN ONLY IN THE PAGE TO DISPLAY
+// Write code to create control arrows considering above index
 if(index==0){
-    // display arrow to index page
+    // display arrow left to index page, because it's the first section
+    leftPage = '<a href="index.html"><i class="left arrow"></i></a>';
+    // arrow right contains href to next section, i.e., one more than the index
     rightPage = '<a href="' + sections_url[index+1] + '"><i class="right arrow"></i></a>';
+    // responsive arrows have both
     responsiveArrows = leftPage;
     responsiveArrows += rightPage;
+
     // Display right direction arrow
     document.getElementById("left-arrow").innerHTML = '<a href="index.html"><i class="left arrow"></i></a>';
 
@@ -95,29 +101,30 @@ if(index==0){
     document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
 }
 if(index==number_of_sections) {
+    // display only left arrow, because it's the last section
     leftPage = '<a href="' + sections_url[index-1] + '"><i class="left arrow"></i></a>';
     responsiveArrows = leftPage;
-        // Display right direction arrow
-        document.getElementById("left-arrow").innerHTML = leftPage;
+    // Display right direction arrow
+    document.getElementById("left-arrow").innerHTML = leftPage;
 
-        // Display right direction arrow
-        document.getElementById("right-arrow").innerHTML = rightPage;
+    // Display right direction arrow
+    document.getElementById("right-arrow").innerHTML = rightPage;
 
-        // Display responsive arrows
-        document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
+    // Display responsive arrows
+    document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
 } else {
     leftPage = '<a href="' + sections_url[index-1] + '"><i class="left arrow"></i></a>';
     rightPage = '<a href="' + sections_url[index+1] + '"><i class="right arrow"></i></a>';
     responsiveArrows = leftPage;
     responsiveArrows += rightPage;
-        // Display right direction arrow
-        document.getElementById("left-arrow").innerHTML = leftPage;
+    // Display right direction arrow
+    document.getElementById("left-arrow").innerHTML = leftPage;
 
-        // Display right direction arrow
-        document.getElementById("right-arrow").innerHTML = rightPage;
+    // Display right direction arrow
+    document.getElementById("right-arrow").innerHTML = rightPage;
 
-        // Display responsive arrows
-        document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
+    // Display responsive arrows
+    document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
 }
 
 
