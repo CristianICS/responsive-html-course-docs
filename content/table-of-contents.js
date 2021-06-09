@@ -99,12 +99,19 @@ if(index==0){
 
     // Display responsive arrows
     document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
-} else if (index==number_of_sections) {
+} else if (index==(number_of_sections-1)) { // matches with the last secion
     // display only left arrow, because it's the last section
     leftPage = '<a href="' + sections_url[index-1] + '"><i class="left arrow"></i></a>';
     responsiveArrows = leftPage;
     // Display right direction arrow
     document.getElementById("left-arrow").innerHTML = leftPage;
+
+    // Display responsive arrows
+    document.getElementById("arrows-responsive").innerHTML = responsiveArrows;
+} else if (index==-1) { // in index.html page
+    // set only right direction arrow
+    rightPage = '<a href="html-introduccion.html"><i class="right arrow"></i></a>';
+    responsiveArrows = rightPage;
 
     // Display right direction arrow
     document.getElementById("right-arrow").innerHTML = rightPage;
