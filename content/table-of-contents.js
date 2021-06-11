@@ -14,8 +14,7 @@
 // so only get the elements of one section
 
 // Array with all course sections
-var sections_names = {
-    html: [
+var sections_names = [
         "Introducción",
         "Elementos básicos",
         "Formato",
@@ -27,18 +26,14 @@ var sections_names = {
         "Formularios",
         "Etiquetas Responsive",
         "Audio",
-        "Mejorar accesibilidad"
-    ],
-    css: [
+        "Mejorar accesibilidad",
         "Conceptos básicos"
-    ]
-};
+];
 
 
 
 // Array with the above section's hrefs
-var sections_url = {
-    html: [
+var sections_url = [
         "html-introduccion.html",
         "html-elementos-basicos.html",
         "html-formato.html",
@@ -50,12 +45,9 @@ var sections_url = {
         "html-formularios.html",
         "html-etiquetas-responsive.html",
         "html-audio.html",
-        "html-mejorar-accesibilidad.html"
-    ],
-    css: [
+        "html-mejorar-accesibilidad.html",
         "css-introduccion.html"
-    ]
-};
+];
 
 
 var number_of_sections = sections_url.length;
