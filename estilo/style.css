@@ -2,13 +2,13 @@
    ========================================================================== */
 /*
 * Define the web colors, based in the luma schema created by https://github.com/gerardbm/atomic
-* 
+*
 * 1. Text default color, direction arrows and left menu text
 * 2. Top menu and left menu hover
 * 3. Theory background and code text color
 * 4. Left menu and inline code background color
 * 5. Headers, links, highlight text and quote in Responsive boxs
-* 6. Responsive box and direction arrows hover 
+* 6. Responsive box and direction arrows hover
 * 7. Warning box
 * 8. left menu header plus code strings
 */
@@ -54,7 +54,7 @@ body {
 	padding: 0; /* 1 */
 	width: 100vw; /* 2 */
 	height: 100vh; /* 2 */
-	
+
 	/* Other */
 	font-family: sans-serif; /* 3 */
 	background-color: var(--orange-medium);
@@ -128,14 +128,14 @@ li {
 	top: 0; /* 1 */
 	right: 0; /* 1 */
 	z-index: 2;
-	
+
 	/* Display & Box Model */
 	margin: 0;
 	padding: 10px;
 	width: 85vw; /* 2 */
 	height: 8vh;
 	box-sizing: border-box; /* 3 */
-	
+
 	/* Other */
 	background-color: var(--orange-strong);
 }
@@ -150,7 +150,7 @@ li {
  * Modify the button that open/close TOC
  *
  * 1. Remove button predefine customization
- * 
+ *
  */
 
 .button-toc {
@@ -158,7 +158,7 @@ li {
 	display: inline-block;
 	cursor: pointer;
 	margin-left: 10px;
-	
+
 	/* Other */
 	-webkit-appearance: none; /* 1 */
 	appearance: none; /* 1 */
@@ -185,7 +185,7 @@ li {
 	display: block; /* 1 */
 	width: 28px;
 	height: 4px;
-	
+
 	/* Other */
 	background-color: var(--orange-white);
 }
@@ -234,7 +234,7 @@ li {
 
 @media screen and (max-width: 1100px) {
 	#openTOCbutton {display: none;} /* 1 */
-	
+
 	.toc-icon {
 		display: inline-block; /* 2 */
 	}
@@ -277,11 +277,12 @@ li {
 	position: fixed;
 	top: 0;
 	left: 0;
-	
+	padding-bottom: 8px;
+
 	overflow: auto;
 	width: 15vw;
 	height: 100%;
-	
+
 	box-sizing: border-box;
 	background-color: var(--orange-soft);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -289,7 +290,7 @@ li {
 
 p.title {
 	padding-left: 15px;
-	
+
 	font-size: 1.2em;
 	font-weight: 600;
 	color: var(--light-white);
@@ -323,11 +324,11 @@ a.subtitle.active {
 
 /* Vertical TOC menu (responsive)
    ========================================================================== */
-/** 
+/**
  * The "responsive" class is added to the navbar with JavaScript when the user clicks on the ".toc-icon"
  * This class makes the left TOC looks good on small screens (display the links vertically in the whole page)
  */
- 
+
 @media screen and (max-width: 1100px) {
 	.TOC.responsive {
 		position: fixed;
@@ -338,16 +339,17 @@ a.subtitle.active {
 		margin: 0;
 		display: block;
 		width: 100%;
-		padding: 5vh 0 5vh 0;
+		padding: 2vh 0 5vh 0;
 	}
-	
+
 	.TOC.responsive p.title {
 		padding-left: 15px;
 		margin-bottom: 10px;
+		margin-top: 20px; /* space between title and top subtitle */
 		font-size: 1.1em;
 		color: var(--light-white);
 	}
-	
+
 	.TOC.responsive a.subtitle {
 		font-size: 0.9em;
 		text-align: left;
@@ -395,7 +397,7 @@ a.subtitle.active {
 	top: 8vh; /* 1 */
 	/* Switch in js script too */
 	left: 15vw; /* 2 */
-	
+
 	/* Switch in js script too */
 	width:85vw; /* 2 */
 	height: 92vh; /* 1 */
@@ -414,7 +416,7 @@ a.subtitle.active {
 	margin: auto; /* 1 */
 	padding-top: 10px;
 	width: 70vw;
-	
+
 	text-align: justify;
 	letter-spacing: 1px;
 	font-size: 1em;
@@ -433,7 +435,7 @@ a.subtitle.active {
 		height: 90vh;
 		width: 100vw;
 	}
-	
+
 	#theory {
 		width: 90vw;
 		padding: 10px;
@@ -447,11 +449,11 @@ a.subtitle.active {
 }
 
 @media screen and (max-width: 500px) {
-	
+
 	#theory {
 		font-size: 0.96em;
 	}
-	
+
 	p {
 		margin-bottom: 8px;
 	}
@@ -674,7 +676,7 @@ hr {
 /**
  * Left arrow
  *
- * Its fixed left at the middle of the page. Contains one <i> element 
+ * Its fixed left at the middle of the page. Contains one <i> element
  * with ".left" class that rotate the arrow to the left
  *
  * 1. In the middle
@@ -686,7 +688,7 @@ hr {
 	position: fixed;
 	top: 50%; /* 1 */
 	left: 15vw; /* 2 */
-	
+
 	padding: 15px;
 }
 
@@ -732,7 +734,7 @@ hr {
 	display: inline-block;
 	padding: 8px; /* 2 */
 	cursor: pointer;
-	
+
 	border: solid var(--orange-white); /* 1 */
 	border-width: 0 5px 5px 0; /* 2 */
 }
@@ -766,7 +768,7 @@ hr {
 	.to-left-page {
 		display: none; /* 1 */
 	}
-	
+
 	#arrows-responsive{
 		display: flex; /*2*/
 		margin: 40px 0 20px 0;
@@ -799,7 +801,7 @@ hr {
 	width: 80%;
 	max-width: 80%;
 	margin: auto;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
 	0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -823,7 +825,7 @@ hr {
  */
 figure.code {
 	display:block;
-	
+
 	margin:1em 0;
 
 	border:2px solid var(--orange-soft);
@@ -834,10 +836,10 @@ figure.code {
 
 figure.code figcaption {
 	display:block;
-	
+
 	padding:5px 10px 4px 10px;
 	border-bottom:1px solid var(--orange-soft);
-	
+
 	font-weight:bold;
 	font-size: 0.9em;
 	font-style: normal;
@@ -862,21 +864,21 @@ pre {
 pre, pre code, pre samp {
 	display:block;
 	margin:0;
-	
+
 	cursor:text;
 }
 
 pre code, pre samp {
 	/* explicit white-space is needed for IE7 */
 	white-space:pre;
-	
+
 	padding:10px;
 	-moz-tab-size:4;
 	-o-tab-size:4;
 	tab-size:4;
-	
+
 	overflow-x:auto;
-	
+
 	/* Allow contenteditable in Safari */
 	word-wrap: normal;
 }
@@ -885,7 +887,7 @@ pre code, pre samp {
 pre.line-numbers {
 	position:relative;
 }
-pre.line-numbers code, 
+pre.line-numbers code,
 pre.line-numbers samp {
 	margin-left:3em;
 	border-left:1px solid var(--orange-soft);
@@ -894,11 +896,11 @@ pre.line-numbers samp {
 /* layout and counter rules for the numbers column */
 pre.line-numbers > div {
 	display:block;
-	
+
 	position:absolute;
 	top:0;
 	left:0;
-	
+
 	height:100%;
 
 
@@ -913,7 +915,7 @@ pre.line-numbers > div > span {
 	display:block;
 	width:2.5em;
 	padding:0 0.5em 0 0;
-	
+
 	text-align:right;
 
 	color:var(--orange-white);
@@ -928,7 +930,7 @@ pre.line-numbers > div > span::before {
 }
 
 pre.line-numbers > div > span:first-child {
-	/* adjust the first number's position 
+	/* adjust the first number's position
 	   to allow for the code element's padding-top */
 	margin-top:10px;
 }
@@ -945,7 +947,7 @@ pre.line-numbers > div > span:nth-child(odd) {
 	pre.line-numbers div {
 		display:none;
 	}
-	pre.line-numbers > code, 
+	pre.line-numbers > code,
 	pre.line-numbers > samp {
 		margin-left:0;
 	}
@@ -954,7 +956,7 @@ pre.line-numbers > div > span:nth-child(odd) {
 /* Code Highlighting */
 
 /* programming keywords/constants/CSS property names/HTML tags and attribute names */
-pre b 
+pre b
 {
   font-weight:normal;
   color:#3890E9;
@@ -1016,7 +1018,7 @@ pre i, pre i *, pre i * *
 	#fcc {
 		border: none;
 	}
-	
+
 	#fcc-image {
 		display: none;
 	}
