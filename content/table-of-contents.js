@@ -14,36 +14,49 @@
 // so only get the elements of one section
 
 // Array with all course sections
-var sections_names = [
-    "Introducción",
-    "Elementos básicos",
-    "Formato",
-    "Encabezados",
-    "Párrafos",
-    "Imágenes",
-    "Enlaces",
-    "Listas",
-    "Formularios",
-    "Etiquetas Responsive",
-    "Audio",
-    "Mejorar accesibilidad"
-];
+var sections_names = {
+    html: [
+        "Introducción",
+        "Elementos básicos",
+        "Formato",
+        "Encabezados",
+        "Párrafos",
+        "Imágenes",
+        "Enlaces",
+        "Listas",
+        "Formularios",
+        "Etiquetas Responsive",
+        "Audio",
+        "Mejorar accesibilidad"
+    ],
+    css: [
+        "Conceptos básicos"
+    ]
+};
+
+
 
 // Array with the above section's hrefs
-var sections_url = [
-    "html-introduccion.html",
-    "html-elementos-basicos.html",
-    "html-formato.html",
-    "html-encabezados.html",
-    "html-parrafos.html",
-    "html-imagenes.html",
-    "html-enlaces.html",
-    "html-listas.html",
-    "html-formularios.html",
-    "html-etiquetas-responsive.html",
-    "html-audio.html",
-    "html-mejorar-accesibilidad.html"
-];
+var sections_url = {
+    html: [
+        "html-introduccion.html",
+        "html-elementos-basicos.html",
+        "html-formato.html",
+        "html-encabezados.html",
+        "html-parrafos.html",
+        "html-imagenes.html",
+        "html-enlaces.html",
+        "html-listas.html",
+        "html-formularios.html",
+        "html-etiquetas-responsive.html",
+        "html-audio.html",
+        "html-mejorar-accesibilidad.html"
+    ],
+    css: [
+        "css-introduccion.html"
+    ]
+};
+
 
 var number_of_sections = sections_url.length;
 
@@ -53,14 +66,32 @@ var TOC;
 // add new line with the title
 TOC = '<p class="title">HTML5</p>';
 
-// add all the sections
+// add all the sections to TOC
 for (i = 0; i < number_of_sections; i++) {
-    // when title of the theory block matchs with the TOC's section, add active class
-    if(document.body.getElementsByTagName("h1")[0].innerHTML==sections_names[i]) {
-        TOC += '<a class="subtitle active">' + sections_names[i] + '</a>';
-    } else {
-        TOC += '<a href="' + sections_url[i] + '" class="subtitle">' + sections_names[i] + '</a>';
+    var section = sections_url[i];
+    // regular expression to retrieve only html sections
+    var patternHTML = /^html/;
+    // regular expression to retrieve only css sections
+    var patternCSS = /^css/;
+
+    if(section == patternHTML){
+        // when title of the theory block matchs with the TOC's section, add active class
+        if(document.body.getElementsByTagName("h1")[0].innerHTML==sections_names[i]) {
+            // When section matches with the section in the TOC, displaying it activated
+            TOC += '<a class="subtitle active">' + sections_names[i] + '</a>';
+        } else {
+            TOC += '<a href="' + section + '" class="subtitle">' + sections_names[i] + '</a>';
+        }
+    } else if(section == patternCSS){
+        // when title of the theory block matchs with the TOC's section, add active class
+        if(document.body.getElementsByTagName("h1")[0].innerHTML==sections_names[i]) {
+            // When section matches with the section in the TOC, displaying it activated
+            TOC += '<a class="subtitle active">' + sections_names[i] + '</a>';
+        } else {
+            TOC += '<a href="' + section + '" class="subtitle">' + sections_names[i] + '</a>';
+        }
     }
+
 }
 
 // Display TOC in the div container with id "reusable-TOC"
