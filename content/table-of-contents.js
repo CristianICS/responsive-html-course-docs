@@ -58,6 +58,9 @@ var TOC;
 // add new line with the title
 TOC = '<p class="title">HTML5</p>';
 
+// set variable to write css title only one time
+var cssTitle = false;
+
 // add all the sections to TOC
 for (i = 0; i < number_of_sections; i++) {
     var section = sections_url[i];
@@ -66,7 +69,8 @@ for (i = 0; i < number_of_sections; i++) {
     // regular expression to retrieve only css sections
     var patternCSS = /^css/;
 
-    if(section == patternHTML){
+    // HTML sections
+    if(section.match(patternHTML)){
         // when title of the theory block matchs with the TOC's section, add active class
         if(document.body.getElementsByTagName("h1")[0].innerHTML==sections_names[i]) {
             // When section matches with the section in the TOC, displaying it activated
@@ -74,16 +78,24 @@ for (i = 0; i < number_of_sections; i++) {
         } else {
             TOC += '<a href="' + section + '" class="subtitle">' + sections_names[i] + '</a>';
         }
-    } else if(section == patternCSS){
-        // when title of the theory block matchs with the TOC's section, add active class
-        if(document.body.getElementsByTagName("h1")[0].innerHTML==sections_names[i]) {
-            // When section matches with the section in the TOC, displaying it activated
-            TOC += '<a class="subtitle active">' + sections_names[i] + '</a>';
+    // CSS sectins
+    } else if(section.match(patternCSS)){
+        // write title
+        if(cssTitle==false){
+            TOC += '<p class="title">CSS3</p>';
+            cssTitle = true;
+            // go back once
+            i--;
         } else {
-            TOC += '<a href="' + section + '" class="subtitle">' + sections_names[i] + '</a>';
+            // when title of the theory block matchs with the TOC's section, add active class
+            if(document.body.getElementsByTagName("h1")[0].innerHTML==sections_names[i]) {
+                // When section matches with the section in the TOC, displaying it activated
+                TOC += '<a class="subtitle active">' + sections_names[i] + '</a>';
+            } else {
+                TOC += '<a href="' + section + '" class="subtitle">' + sections_names[i] + '</a>';
+            }
         }
     }
-
 }
 
 // Display TOC in the div container with id "reusable-TOC"
