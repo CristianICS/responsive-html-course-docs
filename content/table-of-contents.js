@@ -27,7 +27,8 @@ var sections_names = [
         "Etiquetas Responsive",
         "Audio",
         "Mejorar accesibilidad",
-        "Conceptos básicos"
+        "Conceptos básicos",
+        "Aplicar estilos"
 ];
 
 
@@ -46,7 +47,8 @@ var sections_url = [
         "html-etiquetas-responsive.html",
         "html-audio.html",
         "html-mejorar-accesibilidad.html",
-        "css-introduccion.html"
+        "css-introduccion.html",
+        "css-aplicar-estilos.html"
 ];
 
 
