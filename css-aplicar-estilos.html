@@ -38,7 +38,7 @@
 	<!-- Theory Block -->
 	<div id="theory">
 		<h1>Aplicar estilos</h1>
-		<p>Un objeto HTML puede relacionarse con un estilo determinado de tres formas distintas:</p>
+		<p>Un objeto HTML puede asociarse con un estilo de tres formas distintas:</p>
     <ol>
       <li id="description-code1">Dentro del elemento HTML a modificar</li>
     </ol>
@@ -55,7 +55,7 @@
     <ol>
       <li id="description-code2" value="2">En la cabecera (<code>head</code>) del documento HTML, dentro de la etiqueta <code>style</code></li>
     </ol>
-    <figure class="code">
+    <figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
 			<figcaption id="caption-code2">Document style</figcaption>
 			<pre aria-labelledby="caption-code2" aria-describedby="description-code2"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;head&gt;
   &lt;style&gt;</b>
@@ -66,7 +66,7 @@
 &lt;/head&gt;</b></code></pre>
     </figure>
     <ol>
-      <li id="description-code3" value="3">Escribir los estilos dentro de un archivo <code>.css</code>, llamado en la cabecera de la web mediante la siguiente línea:
+      <li value="3">Escribir los estilos dentro de un archivo <code>.css</code>, llamado en la cabecera de la web mediante la siguiente línea:
         <ul>
           <li><code>&lt;link rel="stylesheet" href="estilo/style.css"&gt;</code></li>
         </ul>
@@ -76,6 +76,13 @@
 			<span>Advertencia</span>
 			<p>Es recomendable acabar todas las declaraciones de estilo con un punto y coma.</p>
 		</div>
+
+		<h2 id="link-css-styles">Estilos reutilizables
+			<a href="#link-css-styles" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+		<p> De las tres opciones anteriores, la más adecuada para trabajar es generar una hoja de estilos independiente del archivo <code>html</code>. Por ejemplo, al desarrollar una web puede ser conveniente crear varias páginas adicionales desde las que se podrá acceder a través de la página principal. Con una hoja de estilos se puede aplicar a todas la misma apariencia con tan solo declarar el estilo en el <code>head</code>.</p>
 	</div><!-- #theory -->
 
 	<!-- Right arrow -->
