@@ -40,21 +40,21 @@
 		<h1>Aplicar estilos</h1>
 		<p>Un objeto HTML puede asociarse con un estilo de tres formas distintas:</p>
     <ol>
-      <li id="description-code1">Dentro del elemento HTML a modificar</li>
-    </ol>
-    <figure class="code">
-			<figcaption id="caption-code1">Inline style</figcaption>
-			<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;h2 style</b>=<u>"color: white;"</u><b>&gt;</b>Titulo<b>&lt;/h2&gt;</b></code></pre>
-		</figure>
-		<figure class="example-box">
-			<figcaption>Resultado</figcaption>
-			<div>
-				<h2 style="color: white; margin:0;">Título 2</h2>
-			</div>
-		</figure>
-    <ol>
-      <li id="description-code2" value="2">En la cabecera (<code>head</code>) del documento HTML, dentro de la etiqueta <code>style</code></li>
-    </ol>
+      <li id="description-code1">Dentro del elemento HTML a modificar. <b>Nota:</b> Es una buena práctica acabar las declaraciones con un punto y coma.
+
+			<figure class="code">
+				<figcaption id="caption-code1">Inline style</figcaption>
+				<pre aria-labelledby="caption-code1" aria-describedby="description-code1"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;h2 style</b>=<u>"color: white;"</u><b>&gt;</b>Titulo<b>&lt;/h2&gt;</b></code></pre>
+			</figure>
+			<figure class="example-box">
+				<figcaption>Resultado</figcaption>
+				<div>
+					<h2 style="color: white; margin:0;">Título</h2>
+				</div>
+			</figure>
+
+			</li>
+      <li id="description-code2" value="2">En la cabecera (<code>head</code>) del documento HTML, dentro de la etiqueta <code>style</code>
     <figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
 			<figcaption id="caption-code2">Document style</figcaption>
 			<pre aria-labelledby="caption-code2" aria-describedby="description-code2"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;head&gt;
@@ -65,13 +65,12 @@
   <b>&lt;/style&gt;
 &lt;/head&gt;</b></code></pre>
     </figure>
-    <ol>
-      <li value="3">Escribir los estilos dentro de un archivo <code>.css</code>, llamado en la cabecera de la web mediante la siguiente línea:
-        <ul>
-          <li><code>&lt;link rel="stylesheet" href="estilo/style.css"&gt;</code></li>
-        </ul>
+      <li value="3" id="description-code3">Escribir los estilos dentro de un archivo <code>.css</code>, llamado en la cabecera de la web mediante la siguiente línea:
+				<figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+					<figcaption id="caption-code3">External styles</figcaption>
+		<pre aria-labelledby="caption-code3" aria-describedby="description-code3"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;link rel</b>=<u>"stylesheet"</u> <b>href</b>=<u>"estilo/style.css"</u><b>&gt;</b></code></pre>
+				</figure>
       </li>
-    </ol>
     <div class="warning">
 			<span>Advertencia</span>
 			<p>Es recomendable acabar todas las declaraciones de estilo con un punto y coma.</p>
@@ -83,21 +82,24 @@
 			</a>
 		</h2>
 		<p>De las tres opciones anteriores, la más adecuada es generar una hoja de estilos independiente del archivo <code>html</code>. Por ejemplo, al desarrollar una web puede ser conveniente crear varias páginas adicionales desde las que se podrá acceder a través de la página principal. Con una hoja de estilos se puede aplicar a todas la misma apariencia con tan solo declarar el estilo en el <code>head</code>.</p>
-		<p>Un estilo puede asociarse directamente con el nombre de las etiquetas HTML. La siguiente línea de código en un archivo CSS modificará el tamaño de letra de todos los elementos <code>h2</code>: <code>h2 {font-size: 20px;}</code></p>
+		<p>Un estilo puede asociarse directamente con el nombre de las etiquetas HTML. La siguiente línea de código en un archivo CSS modificará el tamaño de letra de todos los elementos <code>h2</code>:</p>
+		<p>
+			<code>h2 {font-size: 20px;}</code>
+		</p>
 		<p>Si no se quieren modificar todos los elementos de un mismo tipo, existen tres opciones adicionales para reciclar estilos:</p>
 		<ol>
-			<li id="description-code3"><b>Clases:</b> Una clase consiste en un estilo que puede aplicarse a cada elemento del código HTML. Las clases se definen así dentro del documento CSS:
+			<li id="description-code4"><b>Clases:</b> Una clase consiste en un estilo que puede aplicarse a cada elemento del código HTML. Las clases se definen así dentro del documento CSS:
 				<figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
-					<figcaption id="caption-code3">Definir clase</figcaption>
-					<pre aria-labelledby="caption-code3" aria-describedby="description-code3"><code contenteditable="true" tabindex="0" spellcheck="false">.headerClass {
+					<figcaption id="caption-code4">Definir clase</figcaption>
+					<pre aria-labelledby="caption-code4" aria-describedby="description-code4"><code contenteditable="true" tabindex="0" spellcheck="false">.headerClass {
 	<b>color</b>: <u>blue</u>;
 	<b>font-size</b>: <u>20em</u>;
 }</code></pre>
 				</figure>
-				<p id="description-code4">Y una vez definida la clase, <b class="highlight1">puede integrarse infinitas veces</b> dentro de las etiquetas HTML.</p>
+				<p id="description-code5">Y una vez definida la clase, <b class="highlight1">puede integrarse infinitas veces</b> dentro de las etiquetas HTML.</p>
 				<figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
-					<figcaption id="caption-code4">Aplicar clase</figcaption>
-					<pre aria-labelledby="caption-code4" aria-describedby="description-code4"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;h2 class</b>=<u>"headerClass"</u>&gt;</b>Encabezado<b>&lt;/h2&gt;
+					<figcaption id="caption-code5">Aplicar clase</figcaption>
+					<pre aria-labelledby="caption-code5" aria-describedby="description-code5"><code contenteditable="true" tabindex="0" spellcheck="false"><b>&lt;h2 class</b>=<u>"headerClass"</u>&gt;</b>Encabezado<b>&lt;/h2&gt;
 &lt;p class</b>=<u>"headerClass"</u><b>&gt;</b>Texto aleatorio con el mismo estilo que el encabezado.&lt;/p&gt;</b></code></pre>
 				</figure>
 				<div class="warning">
@@ -106,7 +108,74 @@
 						del atributo <code>class</code> empiza sin el punto.</p>
 				</div>
 		</li>
+		<li>
+			<p id="description-code8"><b>ID</b>: Modificar estilo mediante su atributo <code>id</code>. Existe un consenso entre los desarrolladores, i.e., utilizar identificadores únicos para cada objeto. Por ello es recomendable <b class="highlight1">no dar a más de un objeto el mismo id</b>. La diferencia entre <code>id</code> y <code>class</code> es que estas últimas son reutilizables y pueden servir para modificar el estilo de varios elementos. Los <code>id</code> tienen mayor especificidad (<i>higher specificity</i>), i.e., si ambos son aplicados a un elemento el estilo que prevalece es el que figura en el <code>id</code>.</p>
+			<p>
+				<figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+					<figcaption id="caption-code8">CSS Attribute Selectors</figcaption>
+					<pre aria-labelledby="caption-code8" aria-describedby="description-code8"><code><b>#id</b> {<b>background-color</b>: <u>green</u>;}</code></code></pre>
+				</figure>
+			</p>
+		</li>
+		<li>
+			<p id="description-code7"><b>CSS Attribute Selectors</b>: mediante la clave <code>[attr=value]</code>. Modifican los elementos que contienen un valor concreto en un atributo. E.g., modificar el estilo de todos los <code>input</code> de tipo <code>radio</code>:
+			</p>
+			<p>
+				<figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+					<figcaption id="caption-code7">CSS Attribute Selectors</figcaption>
+					<pre aria-labelledby="caption-code7" aria-describedby="description-code7"><code><b>[type='radio']</b> {<b>margin</b>: <u>20px 0px 20px 0px;</u>}</code></code></pre>
+				</figure>
+			</p>
+		</li>
 </ol>
+
+<table>
+	<thead>
+		<tr>
+			<th>Selector</th>
+			<th>Ejemplo</th>
+			<th>Explicación</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>[<i>attribute</i>]</code></td>
+			<td><code>[target]</code></td>
+			<td>Selecciona todos los elementos con el atributo <code>target</code></td>
+		</tr>
+		<tr>
+			<td><code>[<i>attribute=value</i>]</code></td>
+			<td><code>[target=_blank]</code></td>
+			<td>Selecciona todos los elementos con <code>target=_blank</code></td>
+		</tr>
+		<tr>
+			<td><code>[<i>attribute~=value</i>]</code></td>
+			<td><code>[title=flower]</code></td>
+			<td>Selecciona todos los elementos con el atributo <code>title</code> que contenga la palabra <code>"flower"</code></td>
+		</tr>
+		<tr>
+			<td><code>[<i>attribute|=value</i>]</code></td>
+			<td><code>[lang|=en]</code></td>
+			<td>Selecciona todos los elementos con el atributo <code>lang</code> que empiece por la palabra <code>en</code>. <b>Importante:</b> el valor tiene que ser una palabra entera, o sola o seguida de un guión: "en" o "en-us"</td>
+		</tr>
+		<tr>
+			<td><code>[<i>attribute^=value</i>]</code></td>
+			<td><code>a[href^="https"]</code></td>
+			<td>Selecciona todos los elementos <code>a</code> cuyo valor en el atributo <code>href</code> comience por <code>"https"</code></td>
+		</tr>
+		<tr>
+			<td><code>[<i>attribute$=value</i>]</code></td>
+			<td><code>a[href$=".pdf"]</code></td>
+			<td>Selecciona todos los elementos <code>a</code> cuyo valor en el atributo <code>href</code> termine por <code>".pdf"</code></td>
+		</tr>
+		<tr>
+			<td><code>[<i>attribute*=value</i>]</code></td>
+			<td><code>a[href*="w3schools"]</code></td>
+			<td>Selecciona todos los elementos <code>a</code> cuyo valor en el atributo <code>href</code> contenga la cadena <code>"w3schools"</code></td>
+		</tr>
+	</tbody>
+</table>
+<p>La descripción de esta <a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">tabla completa de todos los posibles atributos y selectores</a> se puede encontrar en la web de W3School.</p>
 
 	</div><!-- #theory -->
 
