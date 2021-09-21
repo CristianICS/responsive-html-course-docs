@@ -28,7 +28,8 @@ var sections_names = [
         "Audio",
         "Mejorar accesibilidad",
         "Conceptos básicos",
-        "Aplicar estilos"
+        "Aplicar estilos",
+        "Herencia"
 ];
 
 
@@ -48,7 +49,8 @@ var sections_url = [
         "html-audio.html",
         "html-mejorar-accesibilidad.html",
         "css-introduccion.html",
-        "css-aplicar-estilos.html"
+        "css-aplicar-estilos.html",
+        "css-herencia.html"
 ];
 
 
