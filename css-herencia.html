@@ -38,14 +38,14 @@
   <!-- Theory Block -->
 	<div id="theory">
     <h1>Herencia</h1>
-		<p>Un elemento puede tener asignados a la vez varios estilos. Estos pueden contener propiedades idénticas que entren en conflicto. Establecer cuál de ellas tiene prioridad se consigue mediante las reglas de herencia de CSS, marcando el estilo a mostrar en función del método con el que fue aplicado. De menor a mayor prioridad los métodos son:</p>
+		<p>Un elemento puede tener asignados a la vez varios estilos. Estos pueden contener propiedades idénticas que entren en conflicto. Establecer cuál de ellas tiene prioridad se consigue mediante las reglas de herencia de CSS. Estas marcan el estilo a mostrar en función del método con el que fue aplicado. De menor a mayor prioridad los métodos son:</p>
     <ol>
       <a href="#selector-root"><li>Selector <code>root</code></li></a>
-      <li>Estilo aplicado sobre la etiqueta HTML</li>
-      <li>Clase</li>
-      <li>ID</li>
-      <li><i>Inline styles</i></li>
-      <li>Añadir el atributo <code>!important</code></li>
+      <a href="#html-tag"><li>Estilo aplicado sobre una etiqueta HTML</li></a>
+      <a href="html-class"><li>Clase</li></a>
+      <a href="#html-id"><li>ID</li></a>
+      <a href="#html-inline"><li><i>Inline styles</i></li></a>
+      <a href="#css-important"><li>Añadir el atributo <code>!important</code></li></a>
     </ol>
 
     <h2 id="selector-root">Selector <code>root</code>
@@ -68,6 +68,138 @@
   <b>color</b>: <u>green</u>;
   <b>font-family</b>: <u>monospace</u>;
 }</code></pre>
+    </figure>
+
+    <h2 id="html-tag">Estilo aplicado sobre una etiqueta HTML
+			<a href="#html-tag" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+    <p id="description-code3">Los elementos de marcado que contiene el lenguaje HTML pueden modificarse en su conjunto aplicando un estilo a la etiqueta que los define:</p>
+    <figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+      <figcaption id="caption-code3">Crear un estilo propio para un elemento de HTML</figcaption>
+      <pre aria-labelledby="caption-code3" aria-describedby="description-code3"><code contenteditable="true" tabindex="0" spellcheck="false">h2 {
+  <b>color</b>: <u>orange</u>;
+}</code></pre>
+    </figure>
+    <p>Una vez aplicado todos los encabezados <code>h2</code> tendrán el color naranja. Este estilo sustituirá a la propiedad <code>color</code> <a href="#caption-code1">incluida dentro del elemento raíz <code>root</code></a>.</p>
+
+    <h2 id="html-class">Clase
+			<a href="#html-class" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+    <p id="description-code4">El método cuyos estilos se priorizan por encima de los asociados al elemento <code>root</code> y a las etiquetas HTML es <b class="highlight1">aplicar un estilo definiendo una clase.</b> Al crear una clase que contenga la propiedad <code>color: pink</code> y aplicarla a un elemento <code>h2</code>, se sustituye el color de este último por el rosa. Se deja de tener en cuenta el color aplicado anteriormente.</p>
+    <figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+      <figcaption id="caption-code4">Crear una clase</figcaption>
+      <pre aria-labelledby="caption-code4" aria-describedby="description-code4"><code contenteditable="true" tabindex="0" spellcheck="false">h2 {
+  <b>color</b>: <u>orange</u>;
+}
+.pink-text {
+  <b>color</b>: <u>pink</u>;
+}
+
+<b>&lt;html&gt;</b>
+  <b>&lt;h2 class</b>=<u>"pink-text"</u><b>&gt;</b>Colored header<b>&lt;/h2&gt;</b>
+<b>&lt;/html&gt;</b></code></pre>
+    </figure>
+    <p id="description-code5">Si existen varias clases con la misma propiedad aplicadas a un objeto, la preferencia la tiene aquella que ha sido definida en último lugar. El motivo, los navegadores leen los archivos (incluidas las hojas de estilos) de arriba a abajo. En el siguiente ejemplo, el encabezado se pintaría de color azul.</p>
+    <figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+    <figcaption id="caption-code5">Crear una clase</figcaption>
+      <pre aria-labelledby="caption-code5" aria-describedby="description-code5"><code contenteditable="true" tabindex="0" spellcheck="false">h2 {
+  <b>color</b>: <u>orange</u>;
+}
+.pink-text {
+  <b>color</b>: <u>pink</u>;
+}
+.blue-text {
+  <b>color</b>: <u>blue</u>;
+}
+
+<b>&lt;html&gt;</b>
+  <b>&lt;h2 class</b>=<u>"pink-text blue-text"</u><b>&gt;</b>Colored header<b>&lt;/h2&gt;</b>
+<b>&lt;/html&gt;</b></code></pre>
+    </figure>
+
+    <h2 id="html-id">ID
+			<a href="#html-id" class="anchor-link">
+				<img src="img/link.svg" alt="">
+			</a>
+		</h2>
+    <p id="description-code6">Todos los elementos anteriores se sobrescriben por las propiedades que contienen los estilos asociados a un ID. En el siguiente ejemplo el texto del encabezado sería de color verde.</p>
+    <figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+      <figcaption id="caption-code6">Estilo mediante ID</figcaption>
+        <pre aria-labelledby="caption-code6" aria-describedby="description-code6"><code contenteditable="true" tabindex="0" spellcheck="false">h2 {
+  <b>color</b>: <u>orange</u>;
+}
+.pink-text {
+  <b>color</b>: <u>pink</u>;
+}
+.blue-text {
+  <b>color</b>: <u>blue</u>;
+}
+#header-green {
+  <b>color</b>: <u>green</u>;
+}
+
+<b>&lt;html&gt;</b>
+  <b>&lt;h2 class</b>=<u>"pink-text blue-text"</u><b> id</b>=<u>"header-green"</u><b>&gt;</b>Colored header<b>&lt;/h2&gt;</b>
+<b>&lt;/html&gt;</b></code></pre>
+    </figure>
+
+    <h2 id="html-inline">Estilo dentro del propio elemento
+      <a href="#html-inline" class="anchor-link">
+        <img src="img/link.svg" alt="">
+      </a>
+    </h2>
+    <p id="description-code7">La propiedad definida dentro de la opción <code>style</code> en la propia etiqueta HTML <b class="highlight1">tendrá preferencia sobre el resto.</b> En el siguiente ejemplo el encabezado se mostrará de color amarillo.</p>
+    <figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+      <figcaption id="caption-code7">Inline style</figcaption>
+          <pre aria-labelledby="caption-code7" aria-describedby="description-code7"><code contenteditable="true" tabindex="0" spellcheck="false">h2 {
+  <b>color</b>: <u>orange</u>;
+}
+.pink-text {
+  <b>color</b>: <u>pink</u>;
+}
+.blue-text {
+  <b>color</b>: <u>blue</u>;
+}
+#header-green {
+  <b>color</b>: <u>green</u>;
+}
+
+<b>&lt;html&gt;</b>
+  <b>&lt;h2 style</b>=<u>"color:yellow;"</u>
+  <b>class</b>=<u>"pink-text blue-text"</u><b>
+  id</b>=<u>"header-green"</u><b>&gt;</b>Colored header<b>&lt;/h2&gt;</b>
+<b>&lt;/html&gt;</b></code></pre>
+    </figure>
+    <h2 id="css-important">Añadir el atributo <code>!important</code>
+      <a href="#css-important" class="anchor-link">
+        <img src="img/link.svg" alt="">
+      </a>
+    </h2>
+    <p id="description-code8">La propiedad seguida de la etiqueta <code>!important</code> tendrá preferencia sobre cualquier otra. En el ejemplo siguiente el texto será de color naranja.</p>
+    <figure class="code" style="margin-bottom: 45px"> <!-- Same margin than result box -->
+      <figcaption id="caption-code7">Inline style</figcaption>
+        <pre aria-labelledby="caption-code7" aria-describedby="description-code7"><code contenteditable="true" tabindex="0" spellcheck="false">h2 {
+  <b>color</b>: <u>orange !important</u>;
+}
+.pink-text {
+  <b>color</b>: <u>pink</u>;
+}
+.blue-text {
+  <b>color</b>: <u>blue</u>;
+}
+#header-green {
+  <b>color</b>: <u>green</u>;
+}
+
+<b>&lt;html&gt;</b>
+  <b>&lt;h2 style</b>=<u>"color:yellow;"</u>
+  <b>class</b>=<u>"pink-text blue-text"</u><b>
+  id</b>=<u>"header-green"</u><b>&gt;</b>Colored header<b>&lt;/h2&gt;</b>
+<b>&lt;/html&gt;</b></code></pre>
     </figure>
   </div><!-- #theory -->
 
